@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data concentrator", "Data concentrator\Data concentrator.csproj", "{70AA1039-006B-42E7-AAEF-726F0F2EF141}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCADA", "SCADA\SCADA.csproj", "{33700D5E-DB49-4735-85CF-38BD0C386A3B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70AA1039-006B-42E7-AAEF-726F0F2EF141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70AA1039-006B-42E7-AAEF-726F0F2EF141}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70AA1039-006B-42E7-AAEF-726F0F2EF141}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70AA1039-006B-42E7-AAEF-726F0F2EF141}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33700D5E-DB49-4735-85CF-38BD0C386A3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33700D5E-DB49-4735-85CF-38BD0C386A3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33700D5E-DB49-4735-85CF-38BD0C386A3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33700D5E-DB49-4735-85CF-38BD0C386A3B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9EEA5371-36F1-4F58-A71A-1D40AE6150D6}
+	EndGlobalSection
+EndGlobal

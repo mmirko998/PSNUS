@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "G41zbMbTgtzLWU2AsWSjLeq5za5pNYQbRA8vVp2vkeZEeQJ+XOz9PEO8NJqRRFrW+dMB0eCF+lP48Enmsvkn0g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\someo\\Desktop\\PSNUS\\PSNUS projekat\\Data concentrator\\Data concentrator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\someo\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\someo\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
