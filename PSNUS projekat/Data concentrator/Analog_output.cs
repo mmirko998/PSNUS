@@ -4,30 +4,32 @@ using System.Text;
 
 namespace Data_concentrator
 {
-    public class Digital_output : IO_tag
+    public class Analog_output : Digital_output
     {
-        private int initial_value;
+        private string units;
 
-        public int Initial_value
+        public string Units
         {
-            get { return initial_value; }
-            set { initial_value = value; }
+            get { return units; }
+            set { units = value; }
         }
 
-        public Digital_output()
+        public Analog_output()
         {
             Name = "";
             Description = "";
             Adress = 0;
             Initial_value = 0;
+            Units = "";
         }
 
-        public Digital_output(string n, string d, int a, int iv)
+        public Analog_output(string n, string d, int a, int iv, string u)
         {
             Name = n;
             Description = d;
             Adress = a;
             Initial_value = iv;
+            Units = u;
         }
 
     }

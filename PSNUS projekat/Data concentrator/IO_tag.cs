@@ -3,7 +3,7 @@
 namespace Data_concentrator
 {
 
-    public class Digital_IO
+    public class IO_tag
     {
         private string name; //ID
 
@@ -29,7 +29,7 @@ namespace Data_concentrator
             set { adress = value; }
         }
 
-        public Digital_IO() 
+        public IO_tag() 
         {
             Name = "";
             Description = "";

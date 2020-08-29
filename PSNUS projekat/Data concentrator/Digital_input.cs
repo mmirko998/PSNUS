@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Data_concentrator
 {
-    class Digital_input : Digital_IO
+    public class Digital_input : IO_tag
     {
         private int scan_time;
 
@@ -14,7 +14,7 @@ namespace Data_concentrator
             set { scan_time = value; }
         }
 
-        Digital_input()
+        public Digital_input()
         {
             Name = "";
             Description = "";
@@ -22,7 +22,7 @@ namespace Data_concentrator
             Scan_time = 1;
         }
 
-        Digital_input(string n, string d, int a, int st)
+        public Digital_input(string n, string d, int a, int st)
         {
             Name = n;
             Description = d;
