@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XgIlzB5HQX7dgHggNcLWhgamurteEkuIZMg7O/rcIlVaDrneM30JEkxOZzZsgZv1sQUyNx90IEOTz/RcllwO6g==",
+  "dgSpecHash": "5Splv2dUeja+DyX64k0FmbF1SzPZBLZKg5SuMcQeYlPnsECqypyi7sYMYFtjf70OTjNc2CVQUgUzff5iHshrSQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\someo\\Desktop\\PSNUS\\PSNUS projekat\\Data concentrator\\Data concentrator.csproj",
+  "projectFilePath": "C:\\Users\\someo\\Desktop\\PSNUS\\PSNUS projekat\\PLC Simulator\\PLC Simulator.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\someo\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\someo\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

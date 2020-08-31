@@ -1,0 +1,5 @@
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\PLC Simulator\bin\Debug\netstandard2.0\PLC Simulator.deps.json
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\PLC Simulator\bin\Debug\netstandard2.0\PLC Simulator.dll
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\PLC Simulator\obj\Debug\netstandard2.0\PLC Simulator.csprojAssemblyReference.cache
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\PLC Simulator\obj\Debug\netstandard2.0\PLC Simulator.AssemblyInfoInputs.cache
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\PLC Simulator\obj\Debug\netstandard2.0\PLC Simulator.AssemblyInfo.cs

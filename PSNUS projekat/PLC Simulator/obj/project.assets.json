@@ -250,11 +250,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\someo\\Desktop\\PSNUS\\PSNUS projekat\\Data concentrator\\Data concentrator.csproj",
-      "projectName": "Data concentrator",
-      "projectPath": "C:\\Users\\someo\\Desktop\\PSNUS\\PSNUS projekat\\Data concentrator\\Data concentrator.csproj",
+      "projectUniqueName": "C:\\Users\\someo\\Desktop\\PSNUS\\PSNUS projekat\\PLC Simulator\\PLC Simulator.csproj",
+      "projectName": "PLC Simulator",
+      "projectPath": "C:\\Users\\someo\\Desktop\\PSNUS\\PSNUS projekat\\PLC Simulator\\PLC Simulator.csproj",
       "packagesPath": "C:\\Users\\someo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\someo\\Desktop\\PSNUS\\PSNUS projekat\\Data concentrator\\obj\\",
+      "outputPath": "C:\\Users\\someo\\Desktop\\PSNUS\\PSNUS projekat\\PLC Simulator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\someo\\AppData\\Roaming\\NuGet\\NuGet.Config",
