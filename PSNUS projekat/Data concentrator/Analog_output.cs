@@ -19,15 +19,17 @@ namespace Data_concentrator
             Name = "";
             Description = "";
             Adress = 0;
+            Current_value = 0;
             Initial_value = 0;
             Units = "";
         }
 
-        public Analog_output(string n, string d, int a, int iv, string u)
+        public Analog_output(string n, string d, int a, double cv, int iv, string u)
         {
             Name = n;
             Description = d;
             Adress = a;
+            Current_value = cv;
             Initial_value = iv;
             Units = u;
         }

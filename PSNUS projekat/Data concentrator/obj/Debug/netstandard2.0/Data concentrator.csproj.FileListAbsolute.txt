@@ -3,3 +3,7 @@ C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data concentrator\bin\Debug\netstand
 C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data concentrator\obj\Debug\netstandard2.0\Data concentrator.csprojAssemblyReference.cache
 C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data concentrator\obj\Debug\netstandard2.0\Data concentrator.AssemblyInfoInputs.cache
 C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data concentrator\obj\Debug\netstandard2.0\Data concentrator.AssemblyInfo.cs
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data concentrator\bin\Debug\netstandard2.0\Data concentrator.pdb
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data concentrator\obj\Debug\netstandard2.0\Data concentrator.csproj.CoreCompileInputs.cache
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data concentrator\obj\Debug\netstandard2.0\Data concentrator.dll
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data concentrator\obj\Debug\netstandard2.0\Data concentrator.pdb

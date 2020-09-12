@@ -29,11 +29,22 @@ namespace Data_concentrator
             set { adress = value; }
         }
 
+        private double current_value;
+
+        public double Current_value
+        {
+            get { return current_value; }
+            set { current_value = value; }
+        }
+
+
+
         public IO_tag() 
         {
             Name = "";
             Description = "";
             Adress = 0;
+            Current_value = 0;
         }
     }
 }

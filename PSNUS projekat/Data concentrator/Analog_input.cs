@@ -6,7 +6,14 @@ namespace Data_concentrator
 {
     public class Analog_input : Digital_input
     {
-        //polje za alarme dodati
+        private List<Alarm> alarms;
+
+        public List<Alarm> Alarms
+        {
+            get { return alarms; }
+            set { alarms = value; }
+        }
+
 
         private string units;
 
@@ -21,18 +28,20 @@ namespace Data_concentrator
             Name = "";
             Description = "";
             Adress = 0;
+            Current_value = 0;
             Scan_time = 1;
-            //alarm init
+            Alarms = new List<Alarm>();
             Units = "";
         }
 
-        public Analog_input(string n, string d, int a, int st, string u)
+        public Analog_input(string n, string d, int a, double cv, int st, string u)
         {
             Name = n;
             Description = d;
             Adress = a;
+            Current_value = cv;
             Scan_time = st;
-            //alarm = al;
+            Alarms = new List<Alarm>();
             Units = u;
         }
 

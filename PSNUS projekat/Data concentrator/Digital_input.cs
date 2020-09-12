@@ -19,14 +19,16 @@ namespace Data_concentrator
             Name = "";
             Description = "";
             Adress = 0;
+            Current_value = 0;
             Scan_time = 1;
         }
 
-        public Digital_input(string n, string d, int a, int st)
+        public Digital_input(string n, string d, int a, double cv, int st)
         {
             Name = n;
             Description = d;
             Adress = a;
+            Current_value = cv;
             Scan_time = st;
         }
     }
