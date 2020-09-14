@@ -11,7 +11,11 @@ namespace Data_concentrator
         public string Units
         {
             get { return units; }
-            set { units = value; }
+            set 
+            { 
+                units = value;
+                OnPropertyChanged("Units");
+            }
         }
 
         public Analog_output()

@@ -10,3 +10,5 @@ C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data_concentrator\obj\Debug\Data_con
 C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data_concentrator\obj\Debug\Data_concentrator.csproj.CopyComplete
 C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data_concentrator\obj\Debug\Data_concentrator.dll
 C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data_concentrator\obj\Debug\Data_concentrator.pdb
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data_concentrator\bin\Debug\PLC_Simulator.dll
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data_concentrator\bin\Debug\PLC_Simulator.pdb

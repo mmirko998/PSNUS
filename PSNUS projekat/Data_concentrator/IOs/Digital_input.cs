@@ -11,7 +11,11 @@ namespace Data_concentrator
         public int Scan_time
         {
             get { return scan_time; }
-            set { scan_time = value; }
+            set 
+            { 
+                scan_time = value;
+                OnPropertyChanged("Scan_time");
+            }
         }
 
         public Digital_input()

@@ -11,7 +11,11 @@ namespace Data_concentrator
         public int Initial_value
         {
             get { return initial_value; }
-            set { initial_value = value; }
+            set 
+            { 
+                initial_value = value;
+                OnPropertyChanged("Initial_value");
+            }
         }
 
         public Digital_output()

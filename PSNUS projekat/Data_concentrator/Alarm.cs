@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Data_concentrator
 {
@@ -36,6 +38,15 @@ namespace Data_concentrator
         {
             get { return message; }
             set { message = value; }
+        }
+
+        private int alarm_id;
+
+        [Key]
+        public int Alarm_id
+        {
+            get { return alarm_id; }
+            set { alarm_id = value; }
         }
 
 

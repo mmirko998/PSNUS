@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <ComboBox Name ="DataSrc_ComboBox" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="DataSrc_ComboBox_SelectionChanged"/>
+        <DataGrid Name ="Data_grid"  HorizontalAlignment="Left" Height="307" Margin="10,55,0,0" VerticalAlignment="Top" Width="632">
+        </DataGrid>
+
     </Grid>
 </Window>

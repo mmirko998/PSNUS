@@ -11,7 +11,11 @@ namespace Data_concentrator
         public List<Alarm> Alarms
         {
             get { return alarms; }
-            set { alarms = value; }
+            set 
+            { 
+                alarms = value;
+                OnPropertyChanged("Alarms");
+            }
         }
 
 
@@ -20,7 +24,11 @@ namespace Data_concentrator
         public string Units
         {
             get { return units; }
-            set { units = value; }
+            set 
+            { 
+                units = value;
+                OnPropertyChanged("Units");
+            }
         }
 
         public Analog_input()
