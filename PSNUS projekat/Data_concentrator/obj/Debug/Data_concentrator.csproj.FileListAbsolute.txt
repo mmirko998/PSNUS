@@ -1,0 +1,12 @@
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data_concentrator\bin\Debug\Data_concentrator.dll.config
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data_concentrator\bin\Debug\Data_concentrator.dll
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data_concentrator\bin\Debug\Data_concentrator.pdb
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data_concentrator\bin\Debug\EntityFramework.dll
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data_concentrator\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data_concentrator\bin\Debug\EntityFramework.xml
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data_concentrator\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data_concentrator\obj\Debug\Data_concentrator.csprojAssemblyReference.cache
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data_concentrator\obj\Debug\Data_concentrator.csproj.CoreCompileInputs.cache
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data_concentrator\obj\Debug\Data_concentrator.csproj.CopyComplete
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data_concentrator\obj\Debug\Data_concentrator.dll
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\Data_concentrator\obj\Debug\Data_concentrator.pdb

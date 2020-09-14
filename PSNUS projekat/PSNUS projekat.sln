@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data concentrator", "Data concentrator\Data concentrator.csproj", "{70AA1039-006B-42E7-AAEF-726F0F2EF141}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data_concentrator", "Data_concentrator\Data_concentrator.csproj", "{3658A50B-D3C2-4331-9F8E-C1E8BAB74461}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SCADA", "SCADA\SCADA.csproj", "{33700D5E-DB49-4735-85CF-38BD0C386A3B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLC_Simulator", "PLC_Simulator\PLC_Simulator.csproj", "{A75B8A13-4A12-428F-B243-E3C5BABC8279}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLC Simulator", "PLC Simulator\PLC Simulator.csproj", "{94941E5E-AB56-4E5B-AA95-7507E258FBB4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCADA", "SCADA\SCADA.csproj", "{D4F81C0E-403F-479C-856D-33B366AAC47D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3658A50B-D3C2-4331-9F8E-C1E8BAB74461} = {3658A50B-D3C2-4331-9F8E-C1E8BAB74461}
+		{A75B8A13-4A12-428F-B243-E3C5BABC8279} = {A75B8A13-4A12-428F-B243-E3C5BABC8279}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +19,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{70AA1039-006B-42E7-AAEF-726F0F2EF141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70AA1039-006B-42E7-AAEF-726F0F2EF141}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{70AA1039-006B-42E7-AAEF-726F0F2EF141}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70AA1039-006B-42E7-AAEF-726F0F2EF141}.Release|Any CPU.Build.0 = Release|Any CPU
-		{33700D5E-DB49-4735-85CF-38BD0C386A3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33700D5E-DB49-4735-85CF-38BD0C386A3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33700D5E-DB49-4735-85CF-38BD0C386A3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{33700D5E-DB49-4735-85CF-38BD0C386A3B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{94941E5E-AB56-4E5B-AA95-7507E258FBB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{94941E5E-AB56-4E5B-AA95-7507E258FBB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{94941E5E-AB56-4E5B-AA95-7507E258FBB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{94941E5E-AB56-4E5B-AA95-7507E258FBB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3658A50B-D3C2-4331-9F8E-C1E8BAB74461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3658A50B-D3C2-4331-9F8E-C1E8BAB74461}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3658A50B-D3C2-4331-9F8E-C1E8BAB74461}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3658A50B-D3C2-4331-9F8E-C1E8BAB74461}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A75B8A13-4A12-428F-B243-E3C5BABC8279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A75B8A13-4A12-428F-B243-E3C5BABC8279}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A75B8A13-4A12-428F-B243-E3C5BABC8279}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A75B8A13-4A12-428F-B243-E3C5BABC8279}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4F81C0E-403F-479C-856D-33B366AAC47D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4F81C0E-403F-479C-856D-33B366AAC47D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4F81C0E-403F-479C-856D-33B366AAC47D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4F81C0E-403F-479C-856D-33B366AAC47D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

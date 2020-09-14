@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7A809B26-8618-4DB4-842A-22F4862C7A2B}</ProjectGuid>
+    <ProjectGuid>{D4F81C0E-403F-479C-856D-33B366AAC47D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>SCADA</RootNamespace>
     <AssemblyName>SCADA</AssemblyName>
@@ -53,6 +53,7 @@
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +93,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data_concentrator\Data_concentrator.csproj">
+      <Project>{3658a50b-d3c2-4331-9f8e-c1e8bab74461}</Project>
+      <Name>Data_concentrator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PLC_Simulator\PLC_Simulator.csproj">
+      <Project>{a75b8a13-4a12-428f-b243-e3c5babc8279}</Project>
+      <Name>PLC_Simulator</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

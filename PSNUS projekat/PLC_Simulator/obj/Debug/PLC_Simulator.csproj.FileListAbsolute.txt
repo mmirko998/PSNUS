@@ -1,0 +1,6 @@
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\PLC_Simulator\bin\Debug\PLC_Simulator.dll
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\PLC_Simulator\bin\Debug\PLC_Simulator.pdb
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\PLC_Simulator\obj\Debug\PLC_Simulator.csprojAssemblyReference.cache
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\PLC_Simulator\obj\Debug\PLC_Simulator.csproj.CoreCompileInputs.cache
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\PLC_Simulator\obj\Debug\PLC_Simulator.dll
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\PLC_Simulator\obj\Debug\PLC_Simulator.pdb
