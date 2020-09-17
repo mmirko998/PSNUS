@@ -14,7 +14,7 @@ namespace Data_concentrator
             set 
             { 
                 scan_time = value;
-                OnPropertyChanged("Scan_time");
+                OnPropertyChanged("DI_Scan_time");
             }
         }
 
@@ -27,12 +27,12 @@ namespace Data_concentrator
             Scan_time = 1;
         }
 
-        public Digital_input(string n, string d, int a, double cv, int st)
+        public Digital_input(string n, string d, int a, int st)
         {
             Name = n;
             Description = d;
             Adress = a;
-            Current_value = cv;
+            Current_value = 0;
             Scan_time = st;
         }
     }

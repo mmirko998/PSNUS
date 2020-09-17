@@ -14,7 +14,7 @@ namespace Data_concentrator
             set 
             { 
                 initial_value = value;
-                OnPropertyChanged("Initial_value");
+                OnPropertyChanged("DO_Initial_value");
             }
         }
 
@@ -27,13 +27,13 @@ namespace Data_concentrator
             Initial_value = 0;
         }
 
-        public Digital_output(string n, string d, int a, double cv, int iv)
+        public Digital_output(string n, string d, int a)
         {
             Name = n;
             Description = d;
             Adress = a;
-            Current_value = cv;
-            Initial_value = iv;
+            Current_value = 0;
+            Initial_value = 0;
         }
 
     }

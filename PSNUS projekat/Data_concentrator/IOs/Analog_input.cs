@@ -14,7 +14,7 @@ namespace Data_concentrator
             set 
             { 
                 alarms = value;
-                OnPropertyChanged("Alarms");
+                OnPropertyChanged("AI_Alarms");
             }
         }
 
@@ -27,7 +27,7 @@ namespace Data_concentrator
             set 
             { 
                 units = value;
-                OnPropertyChanged("Units");
+                OnPropertyChanged("AI_Units");
             }
         }
 
@@ -42,12 +42,12 @@ namespace Data_concentrator
             Units = "";
         }
 
-        public Analog_input(string n, string d, int a, double cv, int st, string u)
+        public Analog_input(string n, string d, int a, int st, string u)
         {
             Name = n;
             Description = d;
             Adress = a;
-            Current_value = cv;
+            Current_value = 0;
             Scan_time = st;
             Alarms = new List<Alarm>();
             Units = u;

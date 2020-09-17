@@ -23,3 +23,5 @@ C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\SCADA.exe
 C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\SCADA.pdb
 C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\Add_AI_window.g.cs
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\Add_AI_window.baml

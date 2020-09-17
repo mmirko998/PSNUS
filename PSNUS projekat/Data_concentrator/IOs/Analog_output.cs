@@ -14,7 +14,7 @@ namespace Data_concentrator
             set 
             { 
                 units = value;
-                OnPropertyChanged("Units");
+                OnPropertyChanged("AO_Units");
             }
         }
 
