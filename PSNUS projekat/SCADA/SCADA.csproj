@@ -69,12 +69,33 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Add_AO_window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Add_DI_window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Add_DO_window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="Add_AI_window.xaml.cs">
       <DependentUpon>Add_AI_window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Add_AO_window.xaml.cs">
+      <DependentUpon>Add_AO_window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Add_DI_window.xaml.cs">
+      <DependentUpon>Add_DI_window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Add_DO_window.xaml.cs">
+      <DependentUpon>Add_DO_window.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>

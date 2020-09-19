@@ -1,11 +1,76 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Data_concentrator
 {
-    public class Analog_input : Digital_input
+    public class Analog_input : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private string name;
+
+        public string Name
+        {
+            get { return name; }
+            set
+            {
+                name = value;
+                OnPropertyChanged("Name");
+            }
+        }
+
+        private string description;
+
+        public string Description
+        {
+            get { return description; }
+            set
+            {
+                description = value;
+                OnPropertyChanged("Description");
+            }
+        }
+
+        private int adress;
+
+        public int Adress
+        {
+            get { return adress; }
+            set
+            {
+                adress = value;
+                OnPropertyChanged("Adress");
+            }
+        }
+
+        private double current_value;
+
+        public double Current_value
+        {
+            get { return current_value; }
+            set
+            {
+                current_value = value;
+                OnPropertyChanged("Current_value");
+            }
+        }
+
+        private int num;
+        [Key]
+        public int Num
+        {
+            get { return num; }
+            set
+            {
+                num = value;
+                OnPropertyChanged("Num");
+            }
+        }
+
+
         private List<Alarm> alarms;
 
         public List<Alarm> Alarms
@@ -14,10 +79,21 @@ namespace Data_concentrator
             set 
             { 
                 alarms = value;
-                OnPropertyChanged("AI_Alarms");
+                OnPropertyChanged("Alarms");
             }
         }
 
+        private int scan_time;
+
+        public int Scan_time
+        {
+            get { return scan_time; }
+            set
+            {
+                scan_time = value;
+                OnPropertyChanged("Scan_time");
+            }
+        }
 
         private string units;
 
@@ -27,7 +103,7 @@ namespace Data_concentrator
             set 
             { 
                 units = value;
-                OnPropertyChanged("AI_Units");
+                OnPropertyChanged("Units");
             }
         }
 
@@ -51,6 +127,12 @@ namespace Data_concentrator
             Scan_time = st;
             Alarms = new List<Alarm>();
             Units = u;
+        }
+
+
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
     }

@@ -25,3 +25,9 @@ C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\bin\Debug\EntityFramework.SqlS
 C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\Add_AI_window.g.cs
 C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\Add_AI_window.baml
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\Add_AO_window.g.cs
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\Add_DI_window.g.cs
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\Add_DO_window.g.cs
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\Add_AO_window.baml
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\Add_DI_window.baml
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\Add_DO_window.baml

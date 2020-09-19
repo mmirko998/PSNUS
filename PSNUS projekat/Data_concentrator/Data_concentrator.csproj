@@ -59,7 +59,6 @@
     <Compile Include="IOs\Analog_output.cs" />
     <Compile Include="IOs\Digital_input.cs" />
     <Compile Include="IOs\Digital_output.cs" />
-    <Compile Include="IOs\IO_tag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

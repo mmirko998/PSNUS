@@ -1,7 +1,6 @@
 ﻿using Data_concentrator;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity.Core.Metadata.Edm;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,31 +16,30 @@ using System.Windows.Shapes;
 namespace SCADA
 {
     /// <summary>
-    /// Interaction logic for Add_AI_window.xaml
+    /// Interaction logic for Add_AO_window.xaml
     /// </summary>
-    public partial class Add_AI_window : Window
+    public partial class Add_AO_window : Window
     {
-        public Analog_input new_AI;
-        public Add_AI_window()
+        public Analog_output new_AO;
+        public Add_AO_window()
         {
             InitializeComponent();
-        }
-
-        private void Cancel_btn_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
 
         private void Add_btn_Click(object sender, RoutedEventArgs e)
         {
             if(validate_data())
             {
-                new_AI = new Analog_input(txt_name.Text, txt_description.Text, int.Parse(txt_adress.Text), int.Parse(txt_scan_time.Text), txt_units.Text );
-                MainWindow.Data_conc.io_ct.Analog_Inputs.Add(new_AI);
+                new_AO = new Analog_output(txt_name.Text, txt_description.Text, int.Parse(txt_adress.Text), int.Parse(txt_init_value.Text), txt_units.Text);
+                MainWindow.Data_conc.io_ct.Analog_Outputs.Add(new_AO);
                 MainWindow.Data_conc.io_ct.SaveChanges();
                 this.Close();
             }
-            
+        }
+
+        private void Cancel_btn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
 
         private bool validate_data()
@@ -51,12 +49,12 @@ namespace SCADA
 
             if (txt_description.Text.Length == 0) return false;
 
-            if (int.TryParse(txt_adress.Text,out n) == false)
+            if (int.TryParse(txt_adress.Text, out n) == false)
             {
                 return false;
             }
 
-            if (int.TryParse(txt_scan_time.Text, out n) == false)
+            if (int.TryParse(txt_init_value.Text, out n) == false)
             {
                 return false;
             }

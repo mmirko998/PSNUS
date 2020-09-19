@@ -29,9 +29,6 @@ namespace SCADA
         {
             InitializeComponent();
 
-            DataSrc_ComboBox.ItemsSource = new List<String>() { "Analog inputs", "Analog outputs", "Digital inputs", "Digital outputs", "Alarms" };
-            DataSrc_ComboBox.SelectedItem = "Analog input";
-
             if (Data_conc == null)
             {
                 Data_conc = new DC_manager();
@@ -41,6 +38,9 @@ namespace SCADA
 
             
             Data_grid.ItemsSource = Data_conc.io_ct.Analog_Inputs.Local;
+
+            DataSrc_ComboBox.ItemsSource = new List<String>() { "Analog inputs", "Analog outputs", "Digital inputs", "Digital outputs", "Alarms" };
+            DataSrc_ComboBox.SelectedItem = "Analog inputs";
         }
 
         private void DataSrc_ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -50,6 +50,7 @@ namespace SCADA
                 case "Analog inputs":
                     {
                         Add_btn.Content = "Add analog input";
+
                         Data_grid.ItemsSource = Data_conc.io_ct.Analog_Inputs.Local;
                         Data_grid.Columns.Clear();
                         generate_cols(0);
@@ -58,6 +59,7 @@ namespace SCADA
                 case "Analog outputs":
                     {
                         Add_btn.Content = "Add analog output";
+
                         Data_grid.ItemsSource = Data_conc.io_ct.Analog_Outputs.Local;
                         Data_grid.Columns.Clear();
                         generate_cols(1);
@@ -66,6 +68,7 @@ namespace SCADA
                 case "Digital outputs":
                     {
                         Add_btn.Content = "Add digital output";
+
                         Data_grid.ItemsSource = Data_conc.io_ct.Digital_Outputs.Local;
                         Data_grid.Columns.Clear();
                         generate_cols(2);
@@ -74,6 +77,7 @@ namespace SCADA
                 case "Digital inputs":
                     {
                         Add_btn.Content = "Add digital input";
+
                         Data_grid.ItemsSource = Data_conc.io_ct.Digital_Inputs.Local;
                         Data_grid.Columns.Clear();
                         generate_cols(3);
@@ -87,9 +91,6 @@ namespace SCADA
                     }
                 default:
                     {
-                        Data_grid.ItemsSource = Data_conc.io_ct.Analog_Inputs.Local;
-                        Data_grid.Columns.Clear();
-                        generate_cols(0);
                         break;
                     }
             }
@@ -118,22 +119,26 @@ namespace SCADA
             colCV.Header = "Current value";
             colCV.Binding = new Binding("Current_value");
             Data_grid.Columns.Add(colCV);
-            switch(io)
+
+
+            switch (io)
             {
                 case 0:
                     {
                         DataGridTemplateColumn colAl = new DataGridTemplateColumn();
                         DataGridTextColumn colU = new DataGridTextColumn();
                         DataGridTextColumn colST = new DataGridTextColumn();
+
+                        colU.Header = "Units";
+                        colU.Binding = new Binding("Units");
+                        Data_grid.Columns.Add(colU);
+                        colST.Header = "Scan time";
+                        colST.Binding = new Binding("Scan_time");
+                        Data_grid.Columns.Add(colST);
+
                         colAl.Header = "Alarms";
                         Data_grid.Columns.Add(colAl);
-                        colU.Header = "Units";
-                        colU.Binding = new Binding("AI_Units");
-                        Data_grid.Columns.Add(colU);
-                        
-                        colST.Header = "Scan time";
-                        colST.Binding = new Binding("AI_Scan_time");
-                        Data_grid.Columns.Add(colST);
+
                         break;
                     }
                 case 1:
@@ -146,7 +151,7 @@ namespace SCADA
                     }
                 case 2:
                     {
-                        
+
                         break;
                     }
                 case 3: 
@@ -175,15 +180,21 @@ namespace SCADA
                         break;
                     }
                 case "Analog outputs":
-                    { 
+                    {
+                        Add_AO_window add_AO = new Add_AO_window();
+                        add_AO.ShowDialog();
                         break;
                     }
                 case "Digital outputs":
-                    {  
+                    {
+                        Add_DO_window add_DO = new Add_DO_window();
+                        add_DO.ShowDialog();
                         break;
                     }
                 case "Digital inputs":
                     {
+                        Add_DI_window add_DI = new Add_DI_window();
+                        add_DI.ShowDialog();
                         break;
                     }
                 case "Alarms":
