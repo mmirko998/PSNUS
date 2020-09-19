@@ -83,9 +83,9 @@ namespace Data_concentrator
             }
         }
 
-        private int scan_time;
+        private double scan_time;
 
-        public int Scan_time
+        public double Scan_time
         {
             get { return scan_time; }
             set
@@ -118,7 +118,7 @@ namespace Data_concentrator
             Units = "";
         }
 
-        public Analog_input(string n, string d, int a, int st, string u)
+        public Analog_input(string n, string d, int a, double st, string u)
         {
             Name = n;
             Description = d;

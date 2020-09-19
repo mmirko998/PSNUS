@@ -36,7 +36,7 @@ namespace SCADA
         {
             if(validate_data())
             {
-                new_AI = new Analog_input(txt_name.Text, txt_description.Text, int.Parse(txt_adress.Text), int.Parse(txt_scan_time.Text), txt_units.Text );
+                new_AI = new Analog_input(txt_name.Text, txt_description.Text, int.Parse(txt_adress.Text), double.Parse(txt_scan_time.Text), txt_units.Text );
                 MainWindow.Data_conc.io_ct.Analog_Inputs.Add(new_AI);
                 MainWindow.Data_conc.io_ct.SaveChanges();
                 this.Close();
@@ -47,6 +47,7 @@ namespace SCADA
         private bool validate_data()
         {
             int n = 0;
+            double k = 0;
             if (txt_name.Text.Length == 0) return false;
 
             if (txt_description.Text.Length == 0) return false;
@@ -56,7 +57,7 @@ namespace SCADA
                 return false;
             }
 
-            if (int.TryParse(txt_scan_time.Text, out n) == false)
+            if (double.TryParse(txt_scan_time.Text, out k) == false)
             {
                 return false;
             }

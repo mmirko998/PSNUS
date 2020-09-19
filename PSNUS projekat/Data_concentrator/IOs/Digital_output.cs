@@ -91,13 +91,13 @@ namespace Data_concentrator
             Initial_value = 0;
         }
 
-        public Digital_output(string n, string d, int a)
+        public Digital_output(string n, string d,int iv, int a)
         {
             Name = n;
             Description = d;
             Adress = a;
-            Current_value = 0;
-            Initial_value = 0;
+            Current_value = iv;
+            Initial_value = iv;
         }
 
 

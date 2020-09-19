@@ -16,13 +16,10 @@
         <Label Content="Description" HorizontalAlignment="Left" Margin="80,85,0,0" VerticalAlignment="Top"/>
         <TextBox Name="txt_description" HorizontalAlignment="Left" Height="23" Margin="80,116,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
 
-        <Label Content="Scan time" HorizontalAlignment="Left" Margin="80,146,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="txt_scan_time" HorizontalAlignment="Left" Height="23" Margin="80,177,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Initial value" HorizontalAlignment="Left" Margin="80,146,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txt_init_value" HorizontalAlignment="Left" Height="23" Margin="80,177,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
 
         <Label Content="Adress" HorizontalAlignment="Left" Margin="80,205,0,0" VerticalAlignment="Top"/>
         <TextBox Name="txt_adress" HorizontalAlignment="Left" Height="23" Margin="80,236,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-
-        <Label Content="Units" HorizontalAlignment="Left" Margin="80,264,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="txt_units" HorizontalAlignment="Left" Height="23" Margin="80,295,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

@@ -71,9 +71,9 @@ namespace Data_concentrator
             }
         }
 
-        private int initial_value;
+        private double initial_value;
 
-        public int Initial_value
+        public double Initial_value
         {
             get { return initial_value; }
             set
@@ -105,12 +105,12 @@ namespace Data_concentrator
             Units = "";
         }
 
-        public Analog_output(string n, string d, int a, int iv, string u)
+        public Analog_output(string n, string d, int a, double iv, string u)
         {
             Name = n;
             Description = d;
             Adress = a;
-            Current_value = 0;
+            Current_value = iv;
             Initial_value = iv;
             Units = u;
         }

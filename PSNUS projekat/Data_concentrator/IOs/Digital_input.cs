@@ -71,9 +71,9 @@ namespace Data_concentrator
         }
 
 
-        private int scan_time;
+        private double scan_time;
 
-        public int Scan_time
+        public double Scan_time
         {
             get { return scan_time; }
             set 
@@ -92,7 +92,7 @@ namespace Data_concentrator
             Scan_time = 1;
         }
 
-        public Digital_input(string n, string d, int a, int st)
+        public Digital_input(string n, string d, int a, double st)
         {
             Name = n;
             Description = d;
