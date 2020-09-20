@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Alarm.cs" />
     <Compile Include="Alarm_type.cs" />
+    <Compile Include="Context\Alarm_Context.cs" />
     <Compile Include="Context\IO_Context.cs" />
     <Compile Include="DC_manager.cs" />
     <Compile Include="IOs\Analog_input.cs" />

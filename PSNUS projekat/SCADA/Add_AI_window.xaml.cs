@@ -38,6 +38,7 @@ namespace SCADA
             {
                 new_AI = new Analog_input(txt_name.Text, txt_description.Text, int.Parse(txt_adress.Text), double.Parse(txt_scan_time.Text), txt_units.Text );
                 MainWindow.Data_conc.io_ct.Analog_Inputs.Add(new_AI);
+                MainWindow.Data_conc.Add_AI(new_AI);
                 MainWindow.Data_conc.io_ct.SaveChanges();
                 this.Close();
             }

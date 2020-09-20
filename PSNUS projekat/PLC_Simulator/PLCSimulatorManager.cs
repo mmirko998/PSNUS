@@ -19,6 +19,9 @@ namespace PLCSimulator
         private Dictionary<int, double> addressValues;
         private object locker = new object();
 
+        Thread t1;
+        Thread t2;
+
         public PLCSimulatorManager()
         {
             addressValues = new Dictionary<int, double>();
@@ -35,13 +38,19 @@ namespace PLCSimulator
             addressValues.Add(110, 0);
         }
 
-        public void StartPLCSimulator()
+        public void PLC_start()
         {
-            Thread t1 = new Thread(GeneratingAnalogInputs);
+            t1 = new Thread(GeneratingAnalogInputs);
             t1.Start();
 
-            Thread t2 = new Thread(GeneratingDigitalInputs);
+            t2 = new Thread(GeneratingDigitalInputs);
             t2.Start();
+        }
+
+        public void PLC_stop()
+        {
+            t1.Abort();
+            t2.Abort();
         }
 
         private void GeneratingAnalogInputs()
@@ -64,7 +73,7 @@ namespace PLCSimulator
         {
             while (true)
             {
-                Thread.Sleep(5000);
+                Thread.Sleep(1000);
 
                 lock (locker)
                 {
@@ -80,6 +89,16 @@ namespace PLCSimulator
 
                 //... 
             }
+        }
+
+        public int Get_D_value(int address) 
+        {
+            return (int)addressValues[address];
+        }
+
+        public double Get_A_value(int address)
+        {
+            return addressValues[address];
         }
     }
 }

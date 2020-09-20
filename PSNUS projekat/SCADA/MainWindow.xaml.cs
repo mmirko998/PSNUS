@@ -35,6 +35,10 @@ namespace SCADA
             }
 
             Data_conc.Context_load();
+            Data_conc.PLC.PLC_start();
+
+            Data_conc.Start_AI();
+            Data_conc.Start_DI();
 
             
             Data_grid.ItemsSource = Data_conc.io_ct.Analog_Inputs.Local;
@@ -92,7 +96,9 @@ namespace SCADA
                         Add_btn.Content = "Add alarm";
                         Remove_btn.Content = "Remove alarm";
 
+                        Data_grid.ItemsSource = Data_conc.alarm_ct.Alarms.Local;
                         Data_grid.Columns.Clear();
+                        generate_alarm_cols();
                         break;
                     }
                 default:
@@ -120,7 +126,7 @@ namespace SCADA
             colD.Binding = new Binding("Description");
             Data_grid.Columns.Add(colD);
             colA.Header = "Adress";
-            colA.Binding = new Binding("Adress");
+            colA.Binding = new Binding("Address");
             Data_grid.Columns.Add(colA);
             colCV.Header = "Current value";
             colCV.Binding = new Binding("Current_value");
@@ -173,6 +179,31 @@ namespace SCADA
                         break;
                     }
             }
+        }
+
+        private void generate_alarm_cols()
+        {
+            DataGridTextColumn colNum = new DataGridTextColumn();
+            DataGridTextColumn colN = new DataGridTextColumn();
+            DataGridTextColumn colT = new DataGridTextColumn();
+            DataGridTextColumn colV = new DataGridTextColumn();
+            DataGridTextColumn colM = new DataGridTextColumn();
+
+            colNum.Header = "#";
+            colNum.Binding = new Binding("Num");
+            Data_grid.Columns.Add(colNum);
+            colN.Header = "Name";
+            colN.Binding = new Binding("Name");
+            Data_grid.Columns.Add(colN);
+            colT.Header = "Alarm type";
+            colT.Binding = new Binding("Alarm_type");
+            Data_grid.Columns.Add(colT);
+            colV.Header = "Value";
+            colV.Binding = new Binding("Alarm_value");
+            Data_grid.Columns.Add(colV);
+            colM.Header = "Message";
+            colM.Binding = new Binding("Message");
+            Data_grid.Columns.Add(colM);
         }
 
         private void Add_btn_Click(object sender, RoutedEventArgs e)
@@ -229,7 +260,9 @@ namespace SCADA
                         {
                             AI_remove = Data_grid.SelectedItem as Analog_input;
                             Remove_tag_window Remove_tag = new Remove_tag_window(AI_remove);
+
                             Remove_tag.ShowDialog();
+
                             Data_grid.ItemsSource = Data_conc.io_ct.Analog_Inputs.Local;
                             break;
                         }
@@ -237,7 +270,9 @@ namespace SCADA
                         {
                             AO_remove = Data_grid.SelectedItem as Analog_output;
                             Remove_tag_window Remove_tag = new Remove_tag_window(AO_remove);
+
                             Remove_tag.ShowDialog();
+
                             Data_grid.ItemsSource = Data_conc.io_ct.Analog_Outputs.Local;
                             break;
                         }
@@ -245,7 +280,12 @@ namespace SCADA
                         {
                             DI_remove = Data_grid.SelectedItem as Digital_input;
                             Remove_tag_window Remove_tag = new Remove_tag_window(DI_remove);
+
+                            Data_conc.DI_threads[DI_remove].Abort();
+                            Data_conc.DI_threads.Remove(DI_remove);
+
                             Remove_tag.ShowDialog();
+
                             Data_grid.ItemsSource = Data_conc.io_ct.Digital_Inputs.Local;
                             break;
                         }
@@ -253,7 +293,9 @@ namespace SCADA
                         {
                             DO_remove = Data_grid.SelectedItem as Digital_output;
                             Remove_tag_window Remove_tag = new Remove_tag_window(DO_remove);
+
                             Remove_tag.ShowDialog();
+
                             Data_grid.ItemsSource = Data_conc.io_ct.Digital_Outputs.Local;
                             break;
                         }

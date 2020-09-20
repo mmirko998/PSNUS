@@ -32,6 +32,7 @@ namespace SCADA
             {
                 new_DI = new Digital_input(txt_name.Text, txt_description.Text, int.Parse(txt_adress.Text), double.Parse(txt_scan_time.Text));
                 MainWindow.Data_conc.io_ct.Digital_Inputs.Add(new_DI);
+                MainWindow.Data_conc.Add_DI(new_DI);
                 MainWindow.Data_conc.io_ct.SaveChanges();
                 this.Close();
             }
