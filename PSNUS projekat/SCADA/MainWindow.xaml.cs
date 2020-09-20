@@ -50,6 +50,7 @@ namespace SCADA
                 case "Analog inputs":
                     {
                         Add_btn.Content = "Add analog input";
+                        Remove_btn.Content = "Remove analog input";
 
                         Data_grid.ItemsSource = Data_conc.io_ct.Analog_Inputs.Local;
                         Data_grid.Columns.Clear();
@@ -59,6 +60,7 @@ namespace SCADA
                 case "Analog outputs":
                     {
                         Add_btn.Content = "Add analog output";
+                        Remove_btn.Content = "Remove analog output";
 
                         Data_grid.ItemsSource = Data_conc.io_ct.Analog_Outputs.Local;
                         Data_grid.Columns.Clear();
@@ -68,6 +70,7 @@ namespace SCADA
                 case "Digital outputs":
                     {
                         Add_btn.Content = "Add digital output";
+                        Remove_btn.Content = "Remove digital output";
 
                         Data_grid.ItemsSource = Data_conc.io_ct.Digital_Outputs.Local;
                         Data_grid.Columns.Clear();
@@ -77,6 +80,7 @@ namespace SCADA
                 case "Digital inputs":
                     {
                         Add_btn.Content = "Add digital input";
+                        Remove_btn.Content = "Remove digital input";
 
                         Data_grid.ItemsSource = Data_conc.io_ct.Digital_Inputs.Local;
                         Data_grid.Columns.Clear();
@@ -86,6 +90,8 @@ namespace SCADA
                 case "Alarms":
                     {
                         Add_btn.Content = "Add alarm";
+                        Remove_btn.Content = "Remove alarm";
+
                         Data_grid.Columns.Clear();
                         break;
                     }
@@ -205,6 +211,58 @@ namespace SCADA
                     {
                         break;
                     }
+            }
+        }
+
+        private void Remove_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (Data_grid.SelectedItem != null)
+            {
+                Analog_input AI_remove;
+                Analog_output AO_remove;
+                Digital_input DI_remove;
+                Digital_output DO_remove;
+
+                switch (DataSrc_ComboBox.SelectedItem)
+                {
+                    case "Analog inputs":
+                        {
+                            AI_remove = Data_grid.SelectedItem as Analog_input;
+                            Remove_tag_window Remove_tag = new Remove_tag_window(AI_remove);
+                            Remove_tag.ShowDialog();
+                            Data_grid.ItemsSource = Data_conc.io_ct.Analog_Inputs.Local;
+                            break;
+                        }
+                    case "Analog outputs":
+                        {
+                            AO_remove = Data_grid.SelectedItem as Analog_output;
+                            Remove_tag_window Remove_tag = new Remove_tag_window(AO_remove);
+                            Remove_tag.ShowDialog();
+                            Data_grid.ItemsSource = Data_conc.io_ct.Analog_Outputs.Local;
+                            break;
+                        }
+                    case "Digital inputs":
+                        {
+                            DI_remove = Data_grid.SelectedItem as Digital_input;
+                            Remove_tag_window Remove_tag = new Remove_tag_window(DI_remove);
+                            Remove_tag.ShowDialog();
+                            Data_grid.ItemsSource = Data_conc.io_ct.Digital_Inputs.Local;
+                            break;
+                        }
+                    case "Digital outputs":
+                        {
+                            DO_remove = Data_grid.SelectedItem as Digital_output;
+                            Remove_tag_window Remove_tag = new Remove_tag_window(DO_remove);
+                            Remove_tag.ShowDialog();
+                            Data_grid.ItemsSource = Data_conc.io_ct.Digital_Outputs.Local;
+                            break;
+                        }
+                    case "Alarms":
+                        {
+                            break;
+                        }
+                }
+                Data_grid.SelectedItem = null;
             }
         }
     }

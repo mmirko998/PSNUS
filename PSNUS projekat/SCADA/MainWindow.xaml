@@ -13,6 +13,7 @@
         </DataGrid>
         <Label Content="Displayed data:" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top"/>
         <Button Name="Add_btn" Content="Add tag" HorizontalAlignment="Left" Margin="140,28,0,0" VerticalAlignment="Top" Width="110" Height="22" Click="Add_btn_Click"/>
+        <Button Name="Remove_btn" Content="Remove tag" HorizontalAlignment="Left" Margin="255,28,0,0" VerticalAlignment="Top" Width="150" Height="22" Click="Remove_btn_Click"/>
 
     </Grid>
 </Window>

@@ -31,3 +31,5 @@ C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\Add_DO_window.g.cs
 C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\Add_AO_window.baml
 C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\Add_DI_window.baml
 C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\Add_DO_window.baml
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\Remove_tag_window.g.cs
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\Remove_tag_window.baml
