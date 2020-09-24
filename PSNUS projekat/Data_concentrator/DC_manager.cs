@@ -37,12 +37,6 @@ namespace Data_concentrator
             AI_threads = new Dictionary<Analog_input, Thread>();
         }
         
-        ~DC_manager()
-        {
-            PLC.PLC_stop();
-            Stop_DI();
-            Stop_AI();
-        }
 
         public void Context_load()
         {

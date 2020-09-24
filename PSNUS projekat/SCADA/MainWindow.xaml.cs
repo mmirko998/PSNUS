@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Data_concentrator;
 using System.Data.Entity;
 using System.Runtime.Remoting.Messaging;
+using System.ComponentModel;
 
 namespace SCADA
 {
@@ -46,6 +47,19 @@ namespace SCADA
             DataSrc_ComboBox.ItemsSource = new List<String>() { "Analog inputs", "Analog outputs", "Digital inputs", "Digital outputs", "Alarms" };
             DataSrc_ComboBox.SelectedItem = "Analog inputs";
 
+        }
+
+        private void Window_Closing(object sender, CancelEventArgs e)
+        {
+            Data_conc.PLC.PLC_stop();
+            Data_conc.Stop_DI();
+            Data_conc.Stop_AI();
+
+            Data_conc.io_ct.SaveChanges();
+            Data_conc.alarm_ct.SaveChanges();
+
+            Data_conc.io_ct.Dispose();
+            Data_conc.alarm_ct.Dispose();
         }
 
         private void DataSrc_ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -138,7 +152,7 @@ namespace SCADA
             {
                 case 0:
                     {
-                        DataGridTemplateColumn colAl = new DataGridTemplateColumn();
+                        //DataGridTemplateColumn colAl = new DataGridTemplateColumn();
                         DataGridTextColumn colU = new DataGridTextColumn();
                         DataGridTextColumn colST = new DataGridTextColumn();
 
@@ -149,8 +163,12 @@ namespace SCADA
                         colST.Binding = new Binding("Scan_time");
                         Data_grid.Columns.Add(colST);
 
-                        colAl.Header = "Alarms";
-                        Data_grid.Columns.Add(colAl);
+                        Data_grid.ContextMenu.Visibility = Visibility.Visible;
+
+                        //colAl.Header = "Alarms";
+                        //Data_grid.Columns.Add(colAl);
+
+                        
 
                         break;
                     }
@@ -163,11 +181,14 @@ namespace SCADA
 
                         Data_grid.IsReadOnly = false;
 
+                        Data_grid.ContextMenu.Visibility = Visibility.Hidden;
+
                         break;
                     }
                 case 2:
                     {
                         Data_grid.IsReadOnly = false;
+                        Data_grid.ContextMenu.Visibility = Visibility.Hidden;
                         break;
                     }
                 case 3: 
@@ -176,6 +197,7 @@ namespace SCADA
                         colST.Header = "Scan time";
                         colST.Binding = new Binding("Scan_time");
                         Data_grid.Columns.Add(colST);
+                        Data_grid.ContextMenu.Visibility = Visibility.Hidden;
                         break;
                     }
                 default:
@@ -204,6 +226,8 @@ namespace SCADA
             colM.Header = "Message";
             colM.Binding = new Binding("Message");
             Data_grid.Columns.Add(colM);
+
+            Data_grid.ContextMenu.Visibility = Visibility.Hidden;
         }
 
         private void Add_btn_Click(object sender, RoutedEventArgs e)
@@ -313,5 +337,7 @@ namespace SCADA
                 Data_grid.SelectedItem = null;
             }
         }
+
+        
     }
 }
