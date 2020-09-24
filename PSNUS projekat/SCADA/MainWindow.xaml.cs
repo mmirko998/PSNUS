@@ -114,23 +114,20 @@ namespace SCADA
 
         private void generate_cols(int io)
         {
-            DataGridTextColumn colNum = new DataGridTextColumn();
             DataGridTextColumn colN = new DataGridTextColumn();
             DataGridTextColumn colD = new DataGridTextColumn();
             DataGridTextColumn colA = new DataGridTextColumn();
             DataGridTextColumn colCV = new DataGridTextColumn();
 
-            colNum.Header = "#";
-            colNum.Binding = new Binding("Num");
-            Data_grid.Columns.Add(colNum);
+            
             colN.Header = "Name";
             colN.Binding = new Binding("Name");
             Data_grid.Columns.Add(colN);
             colD.Header = "Description";
             colD.Binding = new Binding("Description");
             Data_grid.Columns.Add(colD);
-            colA.Header = "Adress";
-            colA.Binding = new Binding("Address");
+            colA.Header = "Address";
+            colA.Binding = new Binding("Adress");
             Data_grid.Columns.Add(colA);
             colCV.Header = "Current value";
             colCV.Binding = new Binding("Current_value");
@@ -190,15 +187,11 @@ namespace SCADA
 
         private void generate_alarm_cols()
         {
-            DataGridTextColumn colNum = new DataGridTextColumn();
             DataGridTextColumn colN = new DataGridTextColumn();
             DataGridTextColumn colT = new DataGridTextColumn();
             DataGridTextColumn colV = new DataGridTextColumn();
             DataGridTextColumn colM = new DataGridTextColumn();
 
-            colNum.Header = "#";
-            colNum.Binding = new Binding("Num");
-            Data_grid.Columns.Add(colNum);
             colN.Header = "Name";
             colN.Binding = new Binding("Name");
             Data_grid.Columns.Add(colN);
@@ -262,6 +255,7 @@ namespace SCADA
                 Analog_output AO_remove;
                 Digital_input DI_remove;
                 Digital_output DO_remove;
+                Alarm Alarm_remove;
 
                 switch (DataSrc_ComboBox.SelectedItem)
                 {
@@ -307,6 +301,12 @@ namespace SCADA
                         }
                     case "Alarms":
                         {
+                            Alarm_remove = Data_grid.SelectedItem as Alarm;
+                            Remove_tag_window Remove_tag = new Remove_tag_window(Alarm_remove);
+
+                            Remove_tag.ShowDialog();
+
+                            Data_grid.ItemsSource = Data_conc.alarm_ct.Alarms.Local;
                             break;
                         }
                 }

@@ -24,6 +24,7 @@ namespace SCADA
         Analog_output AO_remove;
         Digital_input DI_remove;
         Digital_output DO_remove;
+        Alarm Alarm_remove;
 
         public Remove_tag_window()
         {
@@ -54,6 +55,12 @@ namespace SCADA
             DO_remove = rem_DO;
         }
 
+        public Remove_tag_window(Alarm rem_Al)
+        {
+            InitializeComponent();
+            Alarm_remove = rem_Al;
+        }
+
         private void Yes_Click(object sender, RoutedEventArgs e)
         {
             if (AI_remove != null)
@@ -78,6 +85,10 @@ namespace SCADA
             else if (DO_remove != null)
             {
                 MainWindow.Data_conc.io_ct.Digital_Outputs.Remove(DO_remove);
+            }
+            else if (Alarm_remove != null)
+            {
+                MainWindow.Data_conc.alarm_ct.Alarms.Remove(Alarm_remove);
             }
             MainWindow.Data_conc.io_ct.SaveChanges();
             this.Close();

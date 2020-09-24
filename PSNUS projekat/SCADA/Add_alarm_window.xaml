@@ -14,14 +14,14 @@
         <TextBox Name="txt_name" HorizontalAlignment="Center" Height="23" Margin="98,57,99,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
 
         <Label Content="Message" HorizontalAlignment="Center" Margin="130,85,130,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <TextBox Name="txt_description" HorizontalAlignment="Center" Height="64" Margin="69,116,69,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179" Grid.ColumnSpan="2"/>
+        <TextBox Name="txt_msg" HorizontalAlignment="Center" Height="64" Margin="69,116,69,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179" Grid.ColumnSpan="2"/>
 
         <Label Content="Type" HorizontalAlignment="Center" Margin="141,191,141,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <RadioButton Name="Radio_high" Content="High" HorizontalAlignment="Center" Margin="136,216,137,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <RadioButton Name="Radio_low" Content="Low" HorizontalAlignment="Center" Margin="136,236,141,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
 
         <Label Content="Value" HorizontalAlignment="Center" Margin="139,261,139,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <TextBox Name="txt_adress" HorizontalAlignment="Center" Height="23" Margin="98,292,99,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <TextBox Name="txt_value" HorizontalAlignment="Center" Height="23" Margin="98,292,99,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
 
 
     </Grid>
