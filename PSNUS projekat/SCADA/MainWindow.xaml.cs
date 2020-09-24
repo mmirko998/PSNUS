@@ -45,11 +45,15 @@ namespace SCADA
 
             DataSrc_ComboBox.ItemsSource = new List<String>() { "Analog inputs", "Analog outputs", "Digital inputs", "Digital outputs", "Alarms" };
             DataSrc_ComboBox.SelectedItem = "Analog inputs";
+
         }
 
         private void DataSrc_ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            switch(DataSrc_ComboBox.SelectedItem)
+
+            Data_grid.IsReadOnly = true;
+
+            switch (DataSrc_ComboBox.SelectedItem)
             {
                 case "Analog inputs":
                     {
@@ -159,11 +163,14 @@ namespace SCADA
                         colU.Header = "Units";
                         colU.Binding = new Binding("Units");
                         Data_grid.Columns.Add(colU);
+
+                        Data_grid.IsReadOnly = false;
+
                         break;
                     }
                 case 2:
                     {
-
+                        Data_grid.IsReadOnly = false;
                         break;
                     }
                 case 3: 
@@ -236,6 +243,8 @@ namespace SCADA
                     }
                 case "Alarms":
                     {
+                        Add_alarm_window Add_alarm = new Add_alarm_window();
+                        Add_alarm.ShowDialog();
                         break;
                     }
                 default:
@@ -280,9 +289,6 @@ namespace SCADA
                         {
                             DI_remove = Data_grid.SelectedItem as Digital_input;
                             Remove_tag_window Remove_tag = new Remove_tag_window(DI_remove);
-
-                            Data_conc.DI_threads[DI_remove].Abort();
-                            Data_conc.DI_threads.Remove(DI_remove);
 
                             Remove_tag.ShowDialog();
 

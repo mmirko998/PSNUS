@@ -59,6 +59,10 @@ namespace SCADA
             if (AI_remove != null)
             {
                 MainWindow.Data_conc.io_ct.Analog_Inputs.Remove(AI_remove);
+
+                MainWindow.Data_conc.AI_threads[AI_remove].Abort();
+                MainWindow.Data_conc.AI_threads.Remove(AI_remove);
+
             }
             else if (AO_remove != null) 
             {
@@ -67,6 +71,9 @@ namespace SCADA
             else if (DI_remove != null)
             {
                 MainWindow.Data_conc.io_ct.Digital_Inputs.Remove(DI_remove);
+
+                MainWindow.Data_conc.DI_threads[DI_remove].Abort();
+                MainWindow.Data_conc.DI_threads.Remove(DI_remove);
             }
             else if (DO_remove != null)
             {

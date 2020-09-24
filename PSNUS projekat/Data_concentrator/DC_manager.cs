@@ -41,6 +41,7 @@ namespace Data_concentrator
         {
             PLC.PLC_stop();
             Stop_DI();
+            Stop_AI();
         }
 
         public void Context_load()
