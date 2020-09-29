@@ -16,6 +16,8 @@ using Data_concentrator;
 using System.Data.Entity;
 using System.Runtime.Remoting.Messaging;
 using System.ComponentModel;
+using Data_concentrator.Alarms;
+using System.Data.Entity.Migrations.Model;
 
 namespace SCADA
 {
@@ -36,6 +38,8 @@ namespace SCADA
             }
 
             Data_conc.Context_load();
+            Data_conc.Alarms_load();
+
             Data_conc.PLC.PLC_start();
 
             Data_conc.Start_AI();
@@ -56,6 +60,7 @@ namespace SCADA
             Data_conc.Stop_AI();
 
             Data_conc.io_ct.SaveChanges();
+            Data_conc.alarm_ct.SaveChanges();
             Data_conc.alarm_ct.SaveChanges();
 
             Data_conc.io_ct.Dispose();
@@ -338,6 +343,45 @@ namespace SCADA
             }
         }
 
-        
+        private void Menu_Link_Click(object sender, RoutedEventArgs e)
+        {
+            if (Data_grid.SelectedItem != null)
+            {
+                Analog_input ai = Data_grid.SelectedItem as Analog_input;
+                Link_alarms_window Link_al_window = new Link_alarms_window(ai);
+
+                Link_al_window.ShowDialog();
+            }
+            Data_grid.SelectedItem = null;
+        }
+
+        private void Menu_LIst_Click(object sender, RoutedEventArgs e)
+        {
+            if (Data_grid.SelectedItem != null)
+            {
+                Analog_input ai = Data_grid.SelectedItem as Analog_input;
+                string s = "";
+                if (ai.Alarms.Count == 0)
+                {
+                    s = "There are no linked alarms";
+                }
+                else
+                {
+                    foreach (Alarm alarm in ai.Alarms)
+                    {
+                        s += alarm.ToString();
+                    }
+                }
+                MessageBox.Show(s);
+            }
+            Data_grid.SelectedItem = null;
+        }
+
+        private void History_btn_Click(object sender, RoutedEventArgs e)
+        {
+            List<History> histories = Data_conc.alarm_ct.Histories.ToList();
+            History_window history = new History_window(histories);
+            history.Show();
+        }
     }
 }

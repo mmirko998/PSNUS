@@ -65,29 +65,43 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Add_alarm_window.xaml.cs">
+    <Compile Include="Add_remove_tag_windows\Add_alarm_window.xaml.cs">
       <DependentUpon>Add_alarm_window.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Remove_tag_window.xaml.cs">
+    <Compile Include="History_window.xaml.cs">
+      <DependentUpon>History_window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Link_alarms_window.xaml.cs">
+      <DependentUpon>Link_alarms_window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Add_remove_tag_windows\Remove_tag_window.xaml.cs">
       <DependentUpon>Remove_tag_window.xaml</DependentUpon>
     </Compile>
-    <Page Include="Add_AI_window.xaml">
+    <Page Include="Add_remove_tag_windows\Add_AI_window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Add_alarm_window.xaml">
+    <Page Include="Add_remove_tag_windows\Add_alarm_window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Add_AO_window.xaml">
+    <Page Include="Add_remove_tag_windows\Add_AO_window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Add_DI_window.xaml">
+    <Page Include="Add_remove_tag_windows\Add_DI_window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Add_DO_window.xaml">
+    <Page Include="Add_remove_tag_windows\Add_DO_window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="History_window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Link_alarms_window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -95,16 +109,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Add_AI_window.xaml.cs">
+    <Compile Include="Add_remove_tag_windows\Add_AI_window.xaml.cs">
       <DependentUpon>Add_AI_window.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Add_AO_window.xaml.cs">
+    <Compile Include="Add_remove_tag_windows\Add_AO_window.xaml.cs">
       <DependentUpon>Add_AO_window.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Add_DI_window.xaml.cs">
+    <Compile Include="Add_remove_tag_windows\Add_DI_window.xaml.cs">
       <DependentUpon>Add_DI_window.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Add_DO_window.xaml.cs">
+    <Compile Include="Add_remove_tag_windows\Add_DO_window.xaml.cs">
       <DependentUpon>Add_DO_window.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
@@ -115,7 +129,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Remove_tag_window.xaml">
+    <Page Include="Add_remove_tag_windows\Remove_tag_window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

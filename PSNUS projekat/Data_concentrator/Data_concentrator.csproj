@@ -52,8 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alarms\Alarm.cs" />
-    <Compile Include="Alarms\Alarm_manager.cs" />
+    <Compile Include="Alarms\Alarm_link.cs" />
     <Compile Include="Alarms\Alarm_type.cs" />
+    <Compile Include="Alarms\History.cs" />
     <Compile Include="Context\Alarm_Context.cs" />
     <Compile Include="Context\IO_Context.cs" />
     <Compile Include="DC_manager.cs" />

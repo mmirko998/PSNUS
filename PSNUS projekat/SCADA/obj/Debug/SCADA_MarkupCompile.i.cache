@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\App.xaml
-71372381133
+9-1586517690
 
-12-2136488553
+141607698912
 18-421416308
-Add_AI_window.xaml;Add_alarm_window.xaml;Add_AO_window.xaml;Add_DI_window.xaml;Add_DO_window.xaml;MainWindow.xaml;Remove_tag_window.xaml;
+Add_remove_tag_windows\Add_AI_window.xaml;Add_remove_tag_windows\Add_alarm_window.xaml;Add_remove_tag_windows\Add_AO_window.xaml;Add_remove_tag_windows\Add_DI_window.xaml;Add_remove_tag_windows\Add_DO_window.xaml;History_window.xaml;Link_alarms_window.xaml;MainWindow.xaml;Add_remove_tag_windows\Remove_tag_window.xaml;
 
 True
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data_concentrator
 {
@@ -70,19 +71,13 @@ namespace Data_concentrator
             }
         }
 
+      
 
-        private List<Alarm> alarms;
-
-        public List<Alarm> Alarms
-        {
-            get { return alarms; }
-            set 
-            { 
-                alarms = value;
-                OnPropertyChanged("Alarms");
-            }
-        }
-
+        
+        [NotMapped]
+        public List<Alarm> Alarms { get; set; }
+        [NotMapped]
+        public List<Alarm> Active_alarms { get; set; }
         private double scan_time;
 
         public double Scan_time
@@ -115,6 +110,7 @@ namespace Data_concentrator
             Current_value = 0;
             Scan_time = 1;
             Alarms = new List<Alarm>();
+            Active_alarms = new List<Alarm>();
             Units = "";
         }
 
@@ -126,6 +122,7 @@ namespace Data_concentrator
             Current_value = 0;
             Scan_time = st;
             Alarms = new List<Alarm>();
+            Active_alarms = new List<Alarm>();
             Units = u;
         }
 

@@ -1,0 +1,28 @@
+﻿<Window x:Class="SCADA.Add_alarm_window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SCADA"
+        mc:Ignorable="d"
+        Title="Add alarm" Height="426" Width="344">
+    <Grid>
+        <Button Name="Add_btn"  Content="Add" HorizontalAlignment="Left" Margin="182,342,0,0" VerticalAlignment="Top" Width="76" Click="Add_btn_Click" />
+        <Button Name="Cancel_btn" Content="Cancel" HorizontalAlignment="Left" Margin="78,342,0,0" VerticalAlignment="Top" Width="76" Click="Cancel_btn_Click"/>
+
+        <Label Content="Name" HorizontalAlignment="Center" Margin="138,26,137,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox Name="txt_name" HorizontalAlignment="Center" Height="23" Margin="98,57,99,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+        <Label Content="Message" HorizontalAlignment="Center" Margin="130,85,130,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox Name="txt_msg" HorizontalAlignment="Center" Height="64" Margin="69,116,69,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179" Grid.ColumnSpan="2"/>
+
+        <Label Content="Type" HorizontalAlignment="Center" Margin="141,191,141,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <RadioButton Name="Radio_high" Content="High" HorizontalAlignment="Center" Margin="136,216,137,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <RadioButton Name="Radio_low" Content="Low" HorizontalAlignment="Center" Margin="136,236,141,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+
+        <Label Content="Value" HorizontalAlignment="Center" Margin="139,261,139,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox Name="txt_value" HorizontalAlignment="Center" Height="23" Margin="98,292,99,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+
+
+    </Grid>
+</Window>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data_concentrator
 {
@@ -72,8 +73,8 @@ namespace Data_concentrator
                 OnPropertyChanged("Num");
             }
         }
-
-
+        [NotMapped]
+        public DateTime Time { get; set; }
 
         public Alarm()
         {
@@ -82,6 +83,7 @@ namespace Data_concentrator
             Alarm_value = 0;
             Type = Alarm_type.LOW;
             Alarm_id = 0;
+            Time = new DateTime();
         }
 
         public Alarm(string n, string m, double val, Alarm_type at)
@@ -90,6 +92,7 @@ namespace Data_concentrator
             Message = m;
             Alarm_value = val;
             Type = at;
+            Time = new DateTime();
         }
 
         protected void OnPropertyChanged(string name)
@@ -97,6 +100,20 @@ namespace Data_concentrator
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
+        public override string ToString()
+        {
+            string s = $"Alarm name: {Name}\nMessage: {Message}\n";
+
+            if (type == Alarm_type.HIGH)
+            {
+                s += $"Type: High\n";
+            }
+            else s+= $"Type: Low\n";
+
+            s += $"Value: {Alarm_value}\n";
+
+            return s;
+        }
         public bool Activate(double Tag_value)
         {
             switch (Type)
