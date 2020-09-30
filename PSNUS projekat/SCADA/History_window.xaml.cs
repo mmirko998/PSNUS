@@ -25,5 +25,6 @@ namespace SCADA
             InitializeComponent();
             History_grid.ItemsSource = histories;
         }
+
     }
 }

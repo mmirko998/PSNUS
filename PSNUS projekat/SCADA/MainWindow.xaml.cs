@@ -157,7 +157,7 @@ namespace SCADA
             {
                 case 0:
                     {
-                        //DataGridTemplateColumn colAl = new DataGridTemplateColumn();
+                        
                         DataGridTextColumn colU = new DataGridTextColumn();
                         DataGridTextColumn colST = new DataGridTextColumn();
 
@@ -169,11 +169,10 @@ namespace SCADA
                         Data_grid.Columns.Add(colST);
 
                         Data_grid.ContextMenu.Visibility = Visibility.Visible;
+                        Data_grid.MouseDoubleClick += Menu_Link_Click;
+                        Data_grid.MouseDoubleClick -= Output_value_change;
 
-                        //colAl.Header = "Alarms";
-                        //Data_grid.Columns.Add(colAl);
 
-                        
 
                         break;
                     }
@@ -184,16 +183,20 @@ namespace SCADA
                         colU.Binding = new Binding("Units");
                         Data_grid.Columns.Add(colU);
 
-                        Data_grid.IsReadOnly = false;
+                        //Data_grid.IsReadOnly = false;
 
                         Data_grid.ContextMenu.Visibility = Visibility.Hidden;
+                        Data_grid.MouseDoubleClick -= Menu_Link_Click;
+                        Data_grid.MouseDoubleClick += Output_value_change;
 
                         break;
                     }
                 case 2:
                     {
-                        Data_grid.IsReadOnly = false;
+                        //Data_grid.IsReadOnly = false;
                         Data_grid.ContextMenu.Visibility = Visibility.Hidden;
+                        Data_grid.MouseDoubleClick -= Menu_Link_Click;
+                        Data_grid.MouseDoubleClick += Output_value_change;
                         break;
                     }
                 case 3: 
@@ -203,6 +206,8 @@ namespace SCADA
                         colST.Binding = new Binding("Scan_time");
                         Data_grid.Columns.Add(colST);
                         Data_grid.ContextMenu.Visibility = Visibility.Hidden;
+                        Data_grid.MouseDoubleClick -= Menu_Link_Click;
+                        Data_grid.MouseDoubleClick -= Output_value_change;
                         break;
                     }
                 default:
@@ -233,6 +238,8 @@ namespace SCADA
             Data_grid.Columns.Add(colM);
 
             Data_grid.ContextMenu.Visibility = Visibility.Hidden;
+            Data_grid.MouseDoubleClick -= Menu_Link_Click;
+            Data_grid.MouseDoubleClick -= Output_value_change;
         }
 
         private void Add_btn_Click(object sender, RoutedEventArgs e)
@@ -382,6 +389,35 @@ namespace SCADA
             List<History> histories = Data_conc.alarm_ct.Histories.ToList();
             History_window history = new History_window(histories);
             history.Show();
+        }
+
+        private void Output_value_change(object sender, RoutedEventArgs e)
+        {
+            switch (DataSrc_ComboBox.SelectedItem)
+            {
+                case "Analog outputs":
+                    {
+                        if (Data_grid.SelectedItem != null)
+                        {
+                            Analog_output ao_edit = Data_grid.SelectedItem as Analog_output;
+                            Output_value_window output_value = new Output_value_window(ao_edit);
+                            output_value.ShowDialog();
+                        }
+                        break;
+                    }
+                case "Digital outputs":
+                    {
+                        if (Data_grid.SelectedItem != null)
+                        {
+                            Digital_output do_edit = Data_grid.SelectedItem as Digital_output;
+                            Output_value_window output_value = new Output_value_window(do_edit);
+                            output_value.ShowDialog();
+                        }
+
+                        break;
+                    }
+            }
+            
         }
     }
 }

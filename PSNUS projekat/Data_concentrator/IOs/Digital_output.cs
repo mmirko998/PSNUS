@@ -100,12 +100,14 @@ namespace Data_concentrator
             Initial_value = iv;
         }
 
-
-
         protected void OnPropertyChanged(string name)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
+        public override string ToString()
+        {
+            return $"{Name}, {Description}\nAddress: {Adress}";
+        }
     }
 }

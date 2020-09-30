@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SCADA"
         mc:Ignorable="d"
-        Title="History_window" Height="450" Width="800">
+        Title="History" Height="450" Width="800">
     <Grid>
         <DataGrid Name="History_grid"  HorizontalAlignment="Left" Height="324" Margin="10,49,0,0" VerticalAlignment="Top" Width="629" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>

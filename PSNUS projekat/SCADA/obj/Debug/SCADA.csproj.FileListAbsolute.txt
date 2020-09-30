@@ -39,3 +39,5 @@ C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\Link_alarms_window.b
 C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\Add_remove_tag_windows\Remove_tag_window.baml
 C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\History_window.g.cs
 C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\History_window.baml
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\Output_value_window.g.cs
+C:\Users\someo\Desktop\PSNUS\PSNUS projekat\SCADA\obj\Debug\Output_value_window.baml

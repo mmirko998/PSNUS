@@ -41,6 +41,8 @@ namespace SCADA
 
             Data_grid_all.ItemsSource = avalible_alarms;
             Data_grid_linked.ItemsSource = linked_alarms;
+
+            AI_info.Content = $"Selected analog input:  " + Selected_AI.ToString();
         }
 
 
@@ -140,27 +142,18 @@ namespace SCADA
                 }
             }
 
-            if (linked_alarms.Count == 0)
+            
+            avalible_alarms = MainWindow.Data_conc.alarm_ct.Alarms.ToList();
+            
+            foreach(Alarm al in linked_alarms)
             {
-                avalible_alarms = MainWindow.Data_conc.alarm_ct.Alarms.ToList();
-            }
-            else
-            {
-                foreach (Alarm al in MainWindow.Data_conc.alarm_ct.Alarms)
+                if(avalible_alarms.Contains(al))
                 {
-                    foreach (Alarm al_l in linked_alarms)
-                    {
-                        if (al.Alarm_id == al_l.Alarm_id)
-                        {
-                            continue;
-                        }
-                        else
-                        {
-                            avalible_alarms.Add(al);
-                        }
-                    }
+                    avalible_alarms.Remove(al);
                 }
             }
+            
         }
+
     }
 }

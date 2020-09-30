@@ -120,5 +120,10 @@ namespace Data_concentrator
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
+        public override string ToString()
+        {
+            return $"{Name}, {Description}\nAddress: {Adress}, Units: [{Units}]";
+        }
+
     }
 }

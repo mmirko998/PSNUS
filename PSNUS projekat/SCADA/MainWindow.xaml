@@ -9,14 +9,14 @@
         Title="SCADA" Height="450" Width="800">
     <Grid>
         <ComboBox Name ="DataSrc_ComboBox" HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top" Width="110" SelectionChanged="DataSrc_ComboBox_SelectionChanged"/>
-        <DataGrid Name ="Data_grid"  HorizontalAlignment="Left" Height="307" Margin="10,55,0,0" VerticalAlignment="Top" Width="632" AutoGenerateColumns="False" >
+        <DataGrid Name ="Data_grid"  HorizontalAlignment="Left" Height="307" Margin="10,55,0,0" VerticalAlignment="Top" Width="632" AutoGenerateColumns="False" CanUserAddRows="False" >
             <DataGrid.ContextMenu>
                 <ContextMenu Visibility="Hidden">
-                    <MenuItem Header="Link alarms" Click="Menu_Link_Click"/>
+                    <MenuItem Header="Manage alarms" Click="Menu_Link_Click"/>
                     <MenuItem Header="List alarms" Click="Menu_LIst_Click"/>
-                    <MenuItem Header="Remove alarms" />
                 </ContextMenu>
             </DataGrid.ContextMenu>
+            
         </DataGrid>
         <Label Content="Displayed data:" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top"/>
         <Button Name="Add_btn" Content="Add tag" HorizontalAlignment="Left" Margin="140,28,0,0" VerticalAlignment="Top" Width="110" Height="22" Click="Add_btn_Click"/>
