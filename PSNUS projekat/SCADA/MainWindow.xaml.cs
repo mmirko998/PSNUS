@@ -458,5 +458,62 @@ namespace SCADA
 
             Data_grid.SelectedItem = null;
         }
+
+        private void Address_btn_Click(object sender, RoutedEventArgs e)
+        {
+            Dictionary<int, string> address_map = new Dictionary<int, string>();
+            string s = "";
+
+            for (int i = 0; i < 4; i++)
+            {
+                address_map.Add(i, "No tag");
+                address_map.Add(i+10, "No tag");
+                address_map.Add(i+100, "No tag");
+                address_map.Add(i+110, "No tag");
+            }
+
+            foreach(Analog_input ai in Data_conc.io_ct.Analog_Inputs.ToList())
+            {
+                address_map[ai.Adress] = ai.Name;
+            }
+
+            foreach (Analog_output ao in Data_conc.io_ct.Analog_Outputs.ToList())
+            {
+                address_map[ao.Adress] = ao.Name;
+            }
+
+            foreach (Digital_input di in Data_conc.io_ct.Digital_Inputs.ToList())
+            {
+                address_map[di.Adress] = di.Name;
+            }
+
+            foreach (Digital_output Do in Data_conc.io_ct.Digital_Outputs.ToList())
+            {
+                address_map[Do.Adress] = Do.Name;
+            }
+
+            s += "Analog input addresses:\n";
+            for(int i = 0; i<4; i++)
+            {
+                s += $"Address: {i} => {address_map[i]}\n";
+            }
+            s += "Analog output addresses:\n";
+            for (int i = 10; i < 14; i++)
+            {
+                s += $"Address: {i} => {address_map[i]}\n";
+            }
+            s += "Digital input addresses:\n";
+            for (int i =100; i < 104; i++)
+            {
+                s += $"Address: {i} => {address_map[i]}\n";
+            }
+            s += "Digital output addresses:\n";
+            for (int i = 110; i < 114; i++)
+            {
+                s += $"Address: {i} => {address_map[i]}\n";
+            }
+
+            MessageBox.Show(s);
+        }
     }
 }
