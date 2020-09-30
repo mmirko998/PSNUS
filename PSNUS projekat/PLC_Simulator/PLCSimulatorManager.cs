@@ -11,12 +11,13 @@ namespace PLCSimulator
     /// 
     /// 4 x ANALOG INPUT : 0-3
     /// 4 x ANALOG OUTPUT: 10-13
-    /// 1 x DIGITAL INPUT: 100
-    /// 1 x DIGITAL OUTPUT: 110
+    /// 1 x DIGITAL INPUT: 100-103
+    /// 1 x DIGITAL OUTPUT: 110-113
     /// </summary>
     public class PLCSimulatorManager
     {
         private Dictionary<int, double> addressValues;
+        
         private object locker = new object();
 
         Thread t1;
@@ -35,7 +36,13 @@ namespace PLCSimulator
             addressValues.Add(12, 0);
             addressValues.Add(13, 0);
             addressValues.Add(100, 0);
+            addressValues.Add(101, 0);
+            addressValues.Add(102, 0);
+            addressValues.Add(103, 0);
             addressValues.Add(110, 0);
+            addressValues.Add(111, 0);
+            addressValues.Add(112, 0);
+            addressValues.Add(113, 0);
         }
 
         public void PLC_start()
@@ -63,6 +70,8 @@ namespace PLCSimulator
                 {
                     addressValues[0] = 100 * Math.Sin((double)DateTime.Now.Second / 60 * Math.PI); //SINE
                     addressValues[1] = 100 * DateTime.Now.Second / 60; //RAMP
+                    addressValues[2] = 100 * Math.Cos((double)DateTime.Now.Second / 60 * Math.PI); //COSE
+                    addressValues[3] = 30 * DateTime.Now.Second / 30; //fast ramp
                 }
 
                 //... 
@@ -85,9 +94,34 @@ namespace PLCSimulator
                     {
                         addressValues[100] = 0;
                     }
-                }
 
-                //... 
+                    if (addressValues[101] == 0)
+                    {
+                        addressValues[101] = 1;
+                    }
+                    else
+                    {
+                        addressValues[101] = 0;
+                    }
+
+                    if (addressValues[102] == 1)
+                    {
+                        addressValues[102] = 0;
+                    }
+                    else
+                    {
+                        addressValues[102] = 1;
+                    }
+
+                    if (addressValues[103] == 1)
+                    {
+                        addressValues[103] = 0;
+                    }
+                    else
+                    {
+                        addressValues[103] = 1;
+                    }
+                }
             }
         }
 
@@ -99,6 +133,11 @@ namespace PLCSimulator
         public double Get_A_value(int address)
         {
             return addressValues[address];
+        }
+
+        public void Set_value(int address, double val)
+        {
+            addressValues[address] = val;
         }
     }
 }

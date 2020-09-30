@@ -66,6 +66,18 @@ namespace Data_concentrator
             }
         }
 
+        public void PLC_address_load()
+        {
+            foreach(Analog_output ao in io_ct.Analog_Outputs.ToList())
+            {
+                PLC.Set_value(ao.Adress, ao.Current_value);
+            }
+
+            foreach(Digital_output Do in io_ct.Digital_Outputs.ToList())
+            {
+                PLC.Set_value(Do.Adress, (double)Do.Current_value);
+            }
+        }
         public void Digital_input_work(Digital_input di)
         {   
             while(true)

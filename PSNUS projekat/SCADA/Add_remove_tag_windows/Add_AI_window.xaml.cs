@@ -22,9 +22,16 @@ namespace SCADA
     public partial class Add_AI_window : Window
     {
         public Analog_input new_AI;
+        private List<int> address_map;
         public Add_AI_window()
         {
             InitializeComponent();
+            address_map = new List<int>();
+            
+            foreach(Analog_input ai in MainWindow.Data_conc.io_ct.Analog_Inputs.ToList())
+            {
+                address_map.Add(ai.Adress);
+            }
         }
 
         private void Cancel_btn_Click(object sender, RoutedEventArgs e)
@@ -101,10 +108,18 @@ namespace SCADA
             }
             else
             {
-                if(n<0 && n>3)
+                if(n<0 || n>3)
                 {
-                    MessageBox.Show("Address not in addres range(0-3)");
+                    MessageBox.Show("Address not in address range(0-3)");
                     return false;
+                }
+                else
+                {
+                    if(address_map.Contains(n))
+                    {
+                        MessageBox.Show("Address already in use");
+                        return false;
+                    }
                 }
             }
 

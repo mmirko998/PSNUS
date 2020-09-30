@@ -53,6 +53,8 @@ namespace SCADA
                     AO_edit.Current_value = double.Parse(txt_value.Text);
                     MainWindow.Data_conc.io_ct.Analog_Outputs.AddOrUpdate(AO_edit);
                     MainWindow.Data_conc.io_ct.SaveChanges();
+
+                    MainWindow.Data_conc.PLC.Set_value(AO_edit.Adress, AO_edit.Current_value);
                     this.Close();
                 }
             }
@@ -63,6 +65,8 @@ namespace SCADA
                     DO_edit.Current_value = int.Parse(txt_value.Text);
                     MainWindow.Data_conc.io_ct.Digital_Outputs.AddOrUpdate(DO_edit);
                     MainWindow.Data_conc.io_ct.SaveChanges();
+
+                    MainWindow.Data_conc.PLC.Set_value(DO_edit.Adress, (double)DO_edit.Current_value);
                     this.Close();
                 }
             }

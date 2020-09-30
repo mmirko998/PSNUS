@@ -21,9 +21,16 @@ namespace SCADA
     public partial class Add_DI_window : Window
     {
         Digital_input new_DI;
+        private List<int> address_map;
         public Add_DI_window()
         {
             InitializeComponent();
+            address_map = new List<int>();
+
+            foreach (Digital_input di in MainWindow.Data_conc.io_ct.Digital_Inputs.ToList())
+            {
+                address_map.Add(di.Adress);
+            }
         }
 
         private void Add_btn_Click(object sender, RoutedEventArgs e)
@@ -47,17 +54,63 @@ namespace SCADA
         {
             int n = 0;
             double k = 0;
-            if (txt_name.Text.Length == 0) return false;
-
-            if (txt_description.Text.Length == 0) return false;
-
-            if (int.TryParse(txt_adress.Text, out n) == false)
+            if (txt_name.Text.Length == 0)
             {
+                MessageBox.Show("Name field can't be empty");
                 return false;
             }
 
-            if (double.TryParse(txt_scan_time.Text, out k) == false)
+            if (txt_description.Text.Length == 0)
             {
+                MessageBox.Show("Description field can't be empty");
+                return false;
+            }
+
+            if (txt_adress.Text.Length == 0)
+            {
+                MessageBox.Show("Address field can't be empty");
+                return false;
+            }
+
+            if (int.TryParse(txt_adress.Text, out n) == false)
+            {
+                MessageBox.Show("Adress value must be number");
+                return false;
+            }
+            else
+            {
+                if (n < 100 || n > 103)
+                {
+                    MessageBox.Show("Address not in address range(100-103)");
+                    return false;
+                }
+                else
+                {
+                    if (address_map.Contains(n))
+                    {
+                        MessageBox.Show("Address already in use");
+                        return false;
+                    }
+                }
+            }
+
+            if (txt_scan_time.Text.Length == 0)
+            {
+                MessageBox.Show("Scan time field can't be empty");
+                return false;
+            }
+
+            if (double.TryParse(txt_scan_time.Text, out k))
+            {
+                if (k <= 0)
+                {
+                    MessageBox.Show("Scan time must be positive number");
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Scan time you entered is not a number");
                 return false;
             }
 

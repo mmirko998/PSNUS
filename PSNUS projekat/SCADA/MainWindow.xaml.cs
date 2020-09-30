@@ -45,14 +45,12 @@ namespace SCADA
             Data_conc.Start_AI();
             Data_conc.Start_DI();
 
-            
+            Data_conc.PLC_address_load();
+
             Data_grid.ItemsSource = Data_conc.io_ct.Analog_Inputs.Local;
 
             DataSrc_ComboBox.ItemsSource = new List<String>() { "Analog inputs", "Analog outputs", "Digital inputs", "Digital outputs", "Alarms" };
             DataSrc_ComboBox.SelectedItem = "Analog inputs";
-
-
-
         }
 
         private void Window_Closing(object sender, CancelEventArgs e)
@@ -62,7 +60,6 @@ namespace SCADA
             Data_conc.Stop_AI();
 
             Data_conc.io_ct.SaveChanges();
-            Data_conc.alarm_ct.SaveChanges();
             Data_conc.alarm_ct.SaveChanges();
 
             Data_conc.io_ct.Dispose();
@@ -131,7 +128,6 @@ namespace SCADA
         private void generate_cols(int io)
         {
             Data_grid.Columns.Clear();
-
             DataGridTextColumn colN = new DataGridTextColumn();
             DataGridTextColumn colD = new DataGridTextColumn();
             DataGridTextColumn colA = new DataGridTextColumn();
