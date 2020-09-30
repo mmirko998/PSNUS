@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SCADA"
         mc:Ignorable="d"
-        Title="History" Height="450" Width="800">
+        Title="History" Height="370" Width="653" ResizeMode="NoResize">
     <Grid>
-        <DataGrid Name="History_grid"  HorizontalAlignment="Left" Height="324" Margin="10,49,0,0" VerticalAlignment="Top" Width="629" IsReadOnly="True" AutoGenerateColumns="False">
+        <DataGrid Name="History_grid"  HorizontalAlignment="Left" Height="324" Margin="10,10,0,0" VerticalAlignment="Top" Width="629" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Message" Binding="{Binding Message}"/>
             </DataGrid.Columns>

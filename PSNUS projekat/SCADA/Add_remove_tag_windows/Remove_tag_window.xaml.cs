@@ -36,30 +36,35 @@ namespace SCADA
         {
             InitializeComponent();
             AI_remove = rem_AI;
+            this.Title = "Remove analog input";
         }
 
         public Remove_tag_window(Analog_output rem_AO)
         {
             InitializeComponent();
             AO_remove = rem_AO;
+            this.Title = "Remove analog output";
         }
 
         public Remove_tag_window(Digital_input rem_DI)
         {
             InitializeComponent();
             DI_remove = rem_DI;
+            this.Title = "Remove digital input";
         }
 
         public Remove_tag_window(Digital_output rem_DO)
         {
             InitializeComponent();
             DO_remove = rem_DO;
+            this.Title = "Remove digital output";
         }
 
         public Remove_tag_window(Alarm rem_Al)
         {
             InitializeComponent();
             Alarm_remove = rem_Al;
+            this.Title = "Remove alarm";
         }
 
         private void Yes_Click(object sender, RoutedEventArgs e)

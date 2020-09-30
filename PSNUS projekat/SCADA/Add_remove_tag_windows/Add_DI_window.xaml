@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SCADA"
         mc:Ignorable="d"
-        Title="Add digital input" Height="450" Width="325">
+        Title="Add digital input" Height="450" Width="325" ResizeMode="NoResize">
     <Grid>
         <Button Name="Add_btn"  Content="Add" HorizontalAlignment="Left" Margin="183,357,0,0" VerticalAlignment="Top" Width="75" Click="Add_btn_Click"/>
         <Button Name="Cancel_btn" Content="Cancel" HorizontalAlignment="Left" Margin="42,357,0,0" VerticalAlignment="Top" Width="76" Click="Cancel_btn_Click"/>

@@ -18,6 +18,7 @@ using System.Runtime.Remoting.Messaging;
 using System.ComponentModel;
 using Data_concentrator.Alarms;
 using System.Data.Entity.Migrations.Model;
+using System.Reflection;
 
 namespace SCADA
 {
@@ -165,8 +166,10 @@ namespace SCADA
                         Data_grid.Columns.Add(colST);
 
                         Data_grid.ContextMenu.Visibility = Visibility.Visible;
+
                         Data_grid.MouseDoubleClick += Menu_Link_Click;
                         Data_grid.MouseDoubleClick -= Output_value_change;
+                        Data_grid.MouseDoubleClick -= Alarm_details_click;
 
 
 
@@ -184,6 +187,7 @@ namespace SCADA
                         Data_grid.ContextMenu.Visibility = Visibility.Hidden;
                         Data_grid.MouseDoubleClick -= Menu_Link_Click;
                         Data_grid.MouseDoubleClick += Output_value_change;
+                        Data_grid.MouseDoubleClick -= Alarm_details_click;
 
                         break;
                     }
@@ -192,6 +196,7 @@ namespace SCADA
                         Data_grid.ContextMenu.Visibility = Visibility.Hidden;
                         Data_grid.MouseDoubleClick -= Menu_Link_Click;
                         Data_grid.MouseDoubleClick += Output_value_change;
+                        Data_grid.MouseDoubleClick -= Alarm_details_click;
                         break;
                     }
                 case 3: 
@@ -203,6 +208,7 @@ namespace SCADA
                         Data_grid.ContextMenu.Visibility = Visibility.Hidden;
                         Data_grid.MouseDoubleClick -= Menu_Link_Click;
                         Data_grid.MouseDoubleClick -= Output_value_change;
+                        Data_grid.MouseDoubleClick -= Alarm_details_click;
                         break;
                     }
                 default:
@@ -217,16 +223,12 @@ namespace SCADA
             Data_grid.Columns.Clear();
 
             DataGridTextColumn colN = new DataGridTextColumn();
-            DataGridTextColumn colT = new DataGridTextColumn();
             DataGridTextColumn colV = new DataGridTextColumn();
             DataGridTextColumn colM = new DataGridTextColumn();
 
             colN.Header = "Name";
             colN.Binding = new Binding("Name");
             Data_grid.Columns.Add(colN);
-            colT.Header = "Alarm type";
-            colT.Binding = new Binding("Alarm_type");
-            Data_grid.Columns.Add(colT);
             colV.Header = "Value";
             colV.Binding = new Binding("Alarm_value");
             Data_grid.Columns.Add(colV);
@@ -237,6 +239,7 @@ namespace SCADA
             Data_grid.ContextMenu.Visibility = Visibility.Hidden;
             Data_grid.MouseDoubleClick -= Menu_Link_Click;
             Data_grid.MouseDoubleClick -= Output_value_change;
+            Data_grid.MouseDoubleClick += Alarm_details_click;
         }
 
         private void Add_btn_Click(object sender, RoutedEventArgs e)
@@ -440,6 +443,17 @@ namespace SCADA
                         MessageBox.Show(s);
                     }
                 }
+            }
+
+            Data_grid.SelectedItem = null;
+        }
+    
+        private void Alarm_details_click(object sender, RoutedEventArgs e)
+        {
+            if(Data_grid.SelectedItem != null)
+            {
+                Alarm alarm = Data_grid.SelectedItem as Alarm;
+                MessageBox.Show(alarm.ToString());
             }
 
             Data_grid.SelectedItem = null;

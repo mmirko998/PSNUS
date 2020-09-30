@@ -67,6 +67,20 @@ namespace SCADA
                 return false;
             }
 
+            if (int.TryParse(txt_init_value.Text, out n) == false)
+            {
+                MessageBox.Show("Initial value must be number");
+                return false;
+            }
+            else
+            {
+                if (n < 0 || n > 1)
+                {
+                    MessageBox.Show("Digital output value must be 0 or 1");
+                    return false;
+                }
+            }
+
             if (txt_adress.Text.Length == 0)
             {
                 MessageBox.Show("Address field can't be empty");
@@ -92,20 +106,6 @@ namespace SCADA
                         MessageBox.Show("Address already in use");
                         return false;
                     }
-                }
-            }
-
-            if (int.TryParse(txt_init_value.Text, out n) == false)
-            {
-                MessageBox.Show("Initial value must be number");
-                return false;
-            }
-            else
-            {
-                if (n < 0 || n > 1)
-                {
-                    MessageBox.Show("Digital output value must be 0 or 1");
-                    return false;
                 }
             }
 

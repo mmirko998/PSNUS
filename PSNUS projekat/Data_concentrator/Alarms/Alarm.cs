@@ -106,9 +106,9 @@ namespace Data_concentrator
 
             if (type == Alarm_type.HIGH)
             {
-                s += $"Type: High\n";
+                s += $"Type: High value\n";
             }
-            else s+= $"Type: Low\n";
+            else s+= $"Type: Low value\n";
 
             s += $"Value: {Alarm_value}\n";
 

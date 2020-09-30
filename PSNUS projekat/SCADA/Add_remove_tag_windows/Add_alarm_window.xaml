@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SCADA"
         mc:Ignorable="d"
-        Title="Add alarm" Height="426" Width="344">
+        Title="Add alarm" Height="426" Width="344" ResizeMode="NoResize">
     <Grid>
         <Button Name="Add_btn"  Content="Add" HorizontalAlignment="Left" Margin="182,342,0,0" VerticalAlignment="Top" Width="76" Click="Add_btn_Click" />
         <Button Name="Cancel_btn" Content="Cancel" HorizontalAlignment="Left" Margin="78,342,0,0" VerticalAlignment="Top" Width="76" Click="Cancel_btn_Click"/>

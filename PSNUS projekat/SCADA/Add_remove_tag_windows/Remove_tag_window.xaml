@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SCADA"
         mc:Ignorable="d"
-        Title="Remove tag" Height="200" Width="400">
+        Title="Remove tag" Height="200" Width="400" ResizeMode="NoResize">
     <Grid>
         <Button Content="Yes" HorizontalAlignment="Left" Margin="240,82,0,0" VerticalAlignment="Top" Width="80" Height="40" Click="Yes_Click" />
         <Button Content="No" HorizontalAlignment="Left" Margin="80,82,0,0" VerticalAlignment="Top" Width="80" Height="40" Click="No_Click" />

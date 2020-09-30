@@ -67,6 +67,12 @@ namespace SCADA
                 return false;
             }
 
+            if (double.TryParse(txt_init_value.Text, out k) == false)
+            {
+                MessageBox.Show("Initial value field empty or not a number");
+                return false;
+            }
+
             if (txt_adress.Text.Length == 0)
             {
                 MessageBox.Show("Address field can't be empty");
@@ -93,12 +99,6 @@ namespace SCADA
                         return false;
                     }
                 }
-            }
-
-            if (double.TryParse(txt_init_value.Text, out k) == false)
-            {
-                MessageBox.Show("Initial value field empty or not a number");
-                return false;
             }
 
             if (txt_units.Text.Length == 0)

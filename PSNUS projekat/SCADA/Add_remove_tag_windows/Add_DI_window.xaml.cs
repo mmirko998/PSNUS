@@ -66,6 +66,26 @@ namespace SCADA
                 return false;
             }
 
+            if (txt_scan_time.Text.Length == 0)
+            {
+                MessageBox.Show("Scan time field can't be empty");
+                return false;
+            }
+
+            if (double.TryParse(txt_scan_time.Text, out k))
+            {
+                if (k <= 0)
+                {
+                    MessageBox.Show("Scan time must be positive number");
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Scan time you entered is not a number");
+                return false;
+            }
+
             if (txt_adress.Text.Length == 0)
             {
                 MessageBox.Show("Address field can't be empty");
@@ -94,25 +114,6 @@ namespace SCADA
                 }
             }
 
-            if (txt_scan_time.Text.Length == 0)
-            {
-                MessageBox.Show("Scan time field can't be empty");
-                return false;
-            }
-
-            if (double.TryParse(txt_scan_time.Text, out k))
-            {
-                if (k <= 0)
-                {
-                    MessageBox.Show("Scan time must be positive number");
-                    return false;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Scan time you entered is not a number");
-                return false;
-            }
 
             return true;
         }

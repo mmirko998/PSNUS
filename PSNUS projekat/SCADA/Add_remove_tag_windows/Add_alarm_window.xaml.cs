@@ -65,17 +65,18 @@ namespace SCADA
                 return false;
             }
 
+            if ((Radio_high.IsChecked == false) && (Radio_low.IsChecked == false))
+            {
+                MessageBox.Show("Alarm type not selected");
+                return false;
+            }
+
             if (double.TryParse(txt_value.Text, out n) == false)
             {
                 MessageBox.Show("Alarm value you entered is empty or not a number");
                 return false;
             }
 
-            if ( (Radio_high.IsChecked == false) && (Radio_low.IsChecked == false))
-            {
-                MessageBox.Show("Alarm type not selected");
-                return false; 
-            }
 
             return true;
         }
