@@ -120,10 +120,12 @@ namespace Data_concentrator
                             History h = new History(s);
                             alarm_ct.Histories.Add(h);
                             alarm_ct.SaveChanges();
+                            ai.State = Tag_state.ALARM_ACTIVE;
                         }
                         if(alarm.Activate(ai.Current_value) == false && exists == true)
                         {
                             ai.Active_alarms.Remove(alarm);
+                            ai.State = Tag_state.ALARM_INACTIVE;
                         }
                     }
                 }

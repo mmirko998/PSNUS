@@ -51,6 +51,8 @@ namespace SCADA
             DataSrc_ComboBox.ItemsSource = new List<String>() { "Analog inputs", "Analog outputs", "Digital inputs", "Digital outputs", "Alarms" };
             DataSrc_ComboBox.SelectedItem = "Analog inputs";
 
+
+
         }
 
         private void Window_Closing(object sender, CancelEventArgs e)
@@ -80,7 +82,6 @@ namespace SCADA
                         Remove_btn.Content = "Remove analog input";
 
                         Data_grid.ItemsSource = Data_conc.io_ct.Analog_Inputs.Local;
-                        Data_grid.Columns.Clear();
                         generate_cols(0);
                         break;
                     }
@@ -90,7 +91,6 @@ namespace SCADA
                         Remove_btn.Content = "Remove analog output";
 
                         Data_grid.ItemsSource = Data_conc.io_ct.Analog_Outputs.Local;
-                        Data_grid.Columns.Clear();
                         generate_cols(1);
                         break;
                     }
@@ -100,7 +100,6 @@ namespace SCADA
                         Remove_btn.Content = "Remove digital output";
 
                         Data_grid.ItemsSource = Data_conc.io_ct.Digital_Outputs.Local;
-                        Data_grid.Columns.Clear();
                         generate_cols(2);
                         break;
                     }
@@ -110,7 +109,6 @@ namespace SCADA
                         Remove_btn.Content = "Remove digital input";
 
                         Data_grid.ItemsSource = Data_conc.io_ct.Digital_Inputs.Local;
-                        Data_grid.Columns.Clear();
                         generate_cols(3);
                         break;
                     }
@@ -120,7 +118,6 @@ namespace SCADA
                         Remove_btn.Content = "Remove alarm";
 
                         Data_grid.ItemsSource = Data_conc.alarm_ct.Alarms.Local;
-                        Data_grid.Columns.Clear();
                         generate_alarm_cols();
                         break;
                     }
@@ -133,6 +130,8 @@ namespace SCADA
 
         private void generate_cols(int io)
         {
+            Data_grid.Columns.Clear();
+
             DataGridTextColumn colN = new DataGridTextColumn();
             DataGridTextColumn colD = new DataGridTextColumn();
             DataGridTextColumn colA = new DataGridTextColumn();
@@ -160,6 +159,7 @@ namespace SCADA
                         
                         DataGridTextColumn colU = new DataGridTextColumn();
                         DataGridTextColumn colST = new DataGridTextColumn();
+                        DataGridTextColumn colAM = new DataGridTextColumn();
 
                         colU.Header = "Units";
                         colU.Binding = new Binding("Units");
@@ -183,7 +183,7 @@ namespace SCADA
                         colU.Binding = new Binding("Units");
                         Data_grid.Columns.Add(colU);
 
-                        //Data_grid.IsReadOnly = false;
+                        
 
                         Data_grid.ContextMenu.Visibility = Visibility.Hidden;
                         Data_grid.MouseDoubleClick -= Menu_Link_Click;
@@ -193,7 +193,6 @@ namespace SCADA
                     }
                 case 2:
                     {
-                        //Data_grid.IsReadOnly = false;
                         Data_grid.ContextMenu.Visibility = Visibility.Hidden;
                         Data_grid.MouseDoubleClick -= Menu_Link_Click;
                         Data_grid.MouseDoubleClick += Output_value_change;
@@ -219,6 +218,8 @@ namespace SCADA
 
         private void generate_alarm_cols()
         {
+            Data_grid.Columns.Clear();
+
             DataGridTextColumn colN = new DataGridTextColumn();
             DataGridTextColumn colT = new DataGridTextColumn();
             DataGridTextColumn colV = new DataGridTextColumn();
@@ -418,6 +419,34 @@ namespace SCADA
                     }
             }
             
+        }
+
+        private void Menu_Active_Click(object sender, RoutedEventArgs e)
+        {
+            if(Data_grid.SelectedItem != null)
+            {
+                Analog_input ai = Data_grid.SelectedItem as Analog_input;
+                string s="";
+
+                if(ai.Alarms.Count == 0)
+                {
+                    MessageBox.Show("No alarms linked to this tag");
+                }
+                else if(ai.Active_alarms.Count == 0)
+                {
+                    MessageBox.Show("No active alarms for this tag");
+                }
+                else
+                {
+                    foreach (Alarm alarm in ai.Active_alarms)
+                    {
+                        s += $"{alarm.Name}: {alarm.Message} \n";
+                        MessageBox.Show(s);
+                    }
+                }
+            }
+
+            Data_grid.SelectedItem = null;
         }
     }
 }

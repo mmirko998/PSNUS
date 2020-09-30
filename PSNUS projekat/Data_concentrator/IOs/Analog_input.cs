@@ -71,9 +71,19 @@ namespace Data_concentrator
             }
         }
 
-      
+        private Tag_state state;
 
-        
+        public Tag_state State
+        {
+            get { return state; }
+            set 
+            { 
+                state = value;
+                OnPropertyChanged("State");
+            }
+        }
+
+
         [NotMapped]
         public List<Alarm> Alarms { get; set; }
         [NotMapped]
@@ -112,6 +122,7 @@ namespace Data_concentrator
             Alarms = new List<Alarm>();
             Active_alarms = new List<Alarm>();
             Units = "";
+            State = Tag_state.NO_ALARM;
         }
 
         public Analog_input(string n, string d, int a, double st, string u)
@@ -124,6 +135,7 @@ namespace Data_concentrator
             Alarms = new List<Alarm>();
             Active_alarms = new List<Alarm>();
             Units = u;
+            State = Tag_state.NO_ALARM;
         }
 
 

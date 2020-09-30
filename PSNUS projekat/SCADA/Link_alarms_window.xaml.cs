@@ -61,8 +61,14 @@ namespace SCADA
                 MainWindow.Data_conc.alarm_ct.Alarm_Links.Add(new_link);
                 MainWindow.Data_conc.alarm_ct.SaveChanges();
 
+                if(linked_alarms.Count == 0)
+                {
+                    Selected_AI.State = Tag_state.ALARM_INACTIVE;
+                }
+
                 avalible_alarms.Remove(alarm_l);
                 linked_alarms.Add(alarm_l);
+
 
                 MainWindow.Data_conc.io_ct.Analog_Inputs.AddOrUpdate(Selected_AI);
                 MainWindow.Data_conc.io_ct.SaveChanges();
@@ -98,6 +104,11 @@ namespace SCADA
 
                 Selected_AI.Alarms.Remove(alarm_l);
                 Selected_AI.Active_alarms.Remove(alarm_l);
+
+                if(Selected_AI.Alarms.Count == 0)
+                {
+                    Selected_AI.State = Tag_state.NO_ALARM;
+                }
 
                 MainWindow.Data_conc.io_ct.Analog_Inputs.AddOrUpdate(Selected_AI);
                 MainWindow.Data_conc.io_ct.SaveChanges();
