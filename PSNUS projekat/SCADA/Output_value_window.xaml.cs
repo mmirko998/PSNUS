@@ -70,33 +70,53 @@ namespace SCADA
 
         private bool AO_validate()
         {
-            double k = 0;
-            if (double.TryParse(txt_value.Text, out k))
+            if (txt_value.Text.Length != 0)
             {
-                return true;
-            } 
+                double k = 0;
+                if (double.TryParse(txt_value.Text, out k))
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Value must be number");
+                    return false;
+                }
+            
+            }
             else
             {
+                MessageBox.Show("Value field empty!");
                 return false;
             }
         }
 
         private bool DO_validate()
         {
-            int n;
-            if (int.TryParse(txt_value.Text, out n))
+            if (txt_value.Text.Length != 0)
             {
-                if (n > -1 && n < 2)
+                int n;
+                if (int.TryParse(txt_value.Text, out n))
                 {
-                    return true;
+                    if (n > -1 && n < 2)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Digital input, value must be etiher 0 or 1");
+                        return false;
+                    }
                 }
                 else
                 {
+                    MessageBox.Show("Value must be number");
                     return false;
                 }
             }
             else
             {
+                MessageBox.Show("Value field empty!");
                 return false;
             }
         }

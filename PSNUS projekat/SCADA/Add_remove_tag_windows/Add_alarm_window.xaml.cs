@@ -53,17 +53,29 @@ namespace SCADA
         private bool validate_data()
         {
             double n = 0;
-            if (txt_name.Text.Length == 0) return false;
+            if (txt_name.Text.Length == 0)
+            {
+                MessageBox.Show("Name field can't be empty");
+                return false;
+            }
 
-            if (txt_msg.Text.Length == 0) return false;
+            if (txt_msg.Text.Length == 0)
+            {
+                MessageBox.Show("Message field can't be empty");
+                return false;
+            }
 
             if (double.TryParse(txt_value.Text, out n) == false)
             {
+                MessageBox.Show("Alarm value you entered is empty or not a number");
                 return false;
             }
 
             if ( (Radio_high.IsChecked == false) && (Radio_low.IsChecked == false))
-            { return false; }
+            {
+                MessageBox.Show("Alarm type not selected");
+                return false; 
+            }
 
             return true;
         }

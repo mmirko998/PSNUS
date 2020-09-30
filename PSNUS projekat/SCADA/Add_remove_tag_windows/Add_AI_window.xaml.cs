@@ -49,21 +49,70 @@ namespace SCADA
         {
             int n = 0;
             double k = 0;
-            if (txt_name.Text.Length == 0) return false;
 
-            if (txt_description.Text.Length == 0) return false;
+            txt_name.Text.Trim();
+            txt_description.Text.Trim();
+            txt_scan_time.Text.Trim();
+            txt_adress.Text.Trim();
+            txt_units.Text.Trim();
+
+            if (txt_name.Text.Length == 0)
+            {
+                MessageBox.Show("Name field can't be empty");
+                return false;
+            }
+
+            if (txt_description.Text.Length == 0)
+            {
+                MessageBox.Show("Description field can't be empty");
+                return false;
+            }
+
+            if (txt_scan_time.Text.Length == 0)
+            {
+                MessageBox.Show("Scan time field can't be empty");
+                return false;
+            }
+
+            if (double.TryParse(txt_scan_time.Text, out k))
+            {
+                if (k <= 0)
+                {
+                    MessageBox.Show("Scan time must be positive number");
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Scan time you entered is not a number");
+                return false;
+            }
+
+            if (txt_adress.Text.Length == 0)
+            {
+                MessageBox.Show("Address field can't be empty");
+                return false;
+            }
 
             if (int.TryParse(txt_adress.Text,out n) == false)
             {
+                MessageBox.Show("Adress value must be number");
                 return false;
             }
-
-            if (double.TryParse(txt_scan_time.Text, out k) == false)
+            else
             {
-                return false;
+                if(n<0 && n>3)
+                {
+                    MessageBox.Show("Address not in addres range(0-3)");
+                    return false;
+                }
             }
 
-            if (txt_units.Text.Length == 0) return false;
+            if (txt_units.Text.Length == 0)
+            {
+                MessageBox.Show("Units field can't be empty");
+                return false;
+            }
 
             return true;
         }
