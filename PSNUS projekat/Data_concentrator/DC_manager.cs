@@ -128,7 +128,7 @@ namespace Data_concentrator
                         {
                             ai.Active_alarms.Add(alarm);
                             alarm.Time = DateTime.Now;
-                            string s = $"{alarm.Name} activated for {ai.Name} at {alarm.Time}";
+                            string s = $"{alarm.Name} activated for {ai.Name} at {alarm.Time}, Message: {alarm.Message}";
                             History h = new History(s);
                             alarm_ct.Histories.Add(h);
                             alarm_ct.SaveChanges();

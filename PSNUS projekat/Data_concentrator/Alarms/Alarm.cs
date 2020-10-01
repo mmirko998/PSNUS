@@ -120,14 +120,14 @@ namespace Data_concentrator
             {
                 case Alarm_type.HIGH:
                     {
-                        if (Tag_value > Alarm_value)
+                        if (Tag_value >= Alarm_value)
                         { return true; }
                         else
                         { return false; }
                     }
                 case Alarm_type.LOW:
                     {
-                        if (Tag_value < Alarm_value)
+                        if (Tag_value <= Alarm_value)
                         { return true; }
                         else
                         { return false; }
